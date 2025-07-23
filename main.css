@@ -48,6 +48,7 @@ header{
 }
 section{
   padding-top:30px;
+  height: 100vh;
 }
 .sec1{
   padding-top:50px;
@@ -93,8 +94,6 @@ section{
 .vehicle{
       padding: 20px ;
       color: white;
-      height: 600px;
-
 }
 .vehicle h1{
     font-size: 30px;
@@ -102,17 +101,18 @@ section{
 .transport{
     display: flex;
     text-align: center;
-    gap: 50px;
+    gap: 80px;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;  
     padding: 50px;
 }
 .trans{
-   display: grid;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,auto));
+    gap: 40px;
     padding: 20px;
-    width: 250px;
+    max-width: 300px;
    
 }
 .imgbox{
@@ -137,3 +137,72 @@ section{
     font-size: 15px;
  }
 
+ /* customer  */
+.container-Cus{
+    display: flex;
+   align-items: center;
+ background-color: #1B1E66;
+color: white;
+}
+
+/* Text Content */
+.Cus-sec{
+    margin: 100px;
+        display: flex;
+   align-items: center;
+ background-color: #1B1E66;
+color: white;
+}
+
+.sec-txt h1{ 
+font-size: 48px;
+margin-bottom: 30px;
+line-height: 50px;
+}
+
+.sec-txt p{
+    font-size: 30px;
+    margin-bottom: 30px;
+  line-height: 40px;
+}
+
+.book-ride{
+    width: 200px;
+    height: 50px;
+    color: rgb(0, 0, 0);
+    background-color: white;
+    border: none;
+    font-size: 20px;
+  border-radius: 10px;
+   font-weight: 600;
+   cursor: pointer;
+}
+
+.book-ride:hover{
+    background-color: #007bff;
+    color: white;
+    transition: .5s ;
+}
+
+/* Image Content */
+ .Cus-img-sec{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 50px;
+    max-width: 40%;
+    align-items: center;
+    justify-content: center;  
+ }
+.Cus-img-sec div {
+    flex: 0 0 calc(50% - 90px);
+    display: flex;
+    justify-content: center;    
+}
+.Cus-img-sec div img{
+    width: 280px;
+    /* max-width: 280px; */
+    height: 180px;
+    margin: 10px;
+    border-radius: 20px;
+    object-fit: cover;
+} 
