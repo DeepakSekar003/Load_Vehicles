@@ -4,6 +4,7 @@ body{
 *{
   margin:0;
   padding:0;
+  box-sizing: border-box;
   text-decoration: none;
   list-style: none;
   font-family: sans-serif;
@@ -70,7 +71,7 @@ section{
 }
 .loc1,.loc2{
   padding:20px;
-  width:200px;
+  width:245px;
   margin-top:10px;
   outline: none;
 
@@ -89,3 +90,50 @@ section{
   margin-bottom:20px;
   object-fit: cover;
 }
+.vehicle{
+      padding: 20px ;
+      color: white;
+      height: 600px;
+
+}
+.vehicle h1{
+    font-size: 30px;
+}
+.transport{
+    display: flex;
+    text-align: center;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;  
+    padding: 50px;
+}
+.trans{
+   display: grid;
+    gap: 20px;
+    padding: 20px;
+    width: 250px;
+   
+}
+.imgbox{
+    display: flex;
+    gap: 50px;
+    height: 150px;
+    width: 150px;
+    justify-content: center;    
+    border: 5px  solid #ffc107;
+    padding: 18px;
+    background-color: white;
+}
+.imgbox :hover{
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+
+ .title{
+    display: flex;
+    align-items: center;
+    padding-left: 40px;
+    font-size: 15px;
+ }
+
