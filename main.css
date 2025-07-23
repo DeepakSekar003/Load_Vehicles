@@ -193,16 +193,73 @@ line-height: 50px;
     align-items: center;
     justify-content: center;  
  }
-.Cus-img-sec div {
-    flex: 0 0 calc(50% - 90px);
-    display: flex;
-    justify-content: center;    
-}
+
 .Cus-img-sec div img{
     width: 280px;
-    /* max-width: 280px; */
     height: 180px;
-    margin: 10px;
+    margin: 20px;
     border-radius: 20px;
     object-fit: cover;
 } 
+
+/* Driver Style */
+
+
+.Driver-Main-Section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1B1E66;
+    color:white
+}
+
+
+ .Driver-container{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 50px;
+  max-width: 40%;
+  border-radius: 90px;
+  align-items: center;
+  justify-content: center;
+ }
+.Driver-container div img{
+    width: 280px;
+    margin: 20px;
+    border-radius: 20px;
+}
+.Driver-container .Driver4 img{
+    width:280px;
+    height: 190px;
+}
+
+/* driver text section */
+
+.Driver-text-container{
+    margin: 100px;
+}
+.Driver-text-container #Earnings-btn{
+    width: 200px;
+    height: 50px;
+    font-size: 20px;
+    font-weight: 600;
+    border: none;
+    margin-top: 50px;
+    border-radius: 10px;
+    background: white;
+    cursor: pointer;
+}
+#Earnings-btn:hover{
+        transition: 0.5s;
+        background-color: #007bff;
+        color: white;
+
+}
+.Driver-text-container h1{
+    font-size: 48px;
+    margin-bottom:30px;
+}
+.Driver-text-container p{
+    font-size: 30px;
+    line-height: 40px;
+}
