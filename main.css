@@ -1,0 +1,265 @@
+body{
+    background-color: #1B1E66;
+}
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  font-family: sans-serif;
+  text-transform: uppercase;
+}
+.logo img{
+  height:70px;
+  width:70px;
+  border-radius: 45px;
+  padding:10px ;
+}
+header{
+  position:relative;
+  display:flex;
+  width:100%;
+  justify-content: space-between;
+  padding:8px 16px;
+}
+.navbar-left ul li{
+  margin-right: 30px;
+}
+.navbar-right ul li{
+  margin-right: 25px;
+}
+.navbar-left ul li, .navbar-right ul li{
+  margin-top: 36px;
+  display:inline-block;
+}
+.navbar-left a , .navbar-right a{
+  color:white;
+  font-size:16px;
+  font-weight: 600;
+  padding:8px 17px;
+  outline: none;
+}
+.navbar-left a:hover , .navbar-right a:hover{
+  color:#007bff;
+  background-color:white;
+  border-radius:5px;
+  padding:10px 20px;
+}
+section{
+  padding-top:30px;
+  height: 100vh;
+}
+.sec1{
+  padding-top:50px;
+}
+.sec1 .home-txt{
+  font-size:25px;
+  color:white;
+  margin-left:50px;
+  letter-spacing: 2px;
+  word-spacing: 5px;
+}
+.select{
+  color:white;
+  margin-left:60px;
+  margin-top:20px;
+  cursor:pointer;
+}
+.location{
+  margin-left:120px;
+  margin-top:25px;
+}
+.loc1,.loc2{
+  padding:20px;
+  width:245px;
+  margin-top:10px;
+  outline: none;
+
+}
+.search{
+  padding:20px;
+  width:245px;
+  margin-top:15px;
+  cursor: pointer;
+}
+.home-img img{
+  height:300px;
+  width:600px;
+  margin-left:550px;
+  margin-top:-300px;
+  margin-bottom:20px;
+  object-fit: cover;
+}
+.vehicle{
+      padding: 20px ;
+      color: white;
+}
+.vehicle h1{
+    font-size: 30px;
+}
+.transport{
+    display: flex;
+    text-align: center;
+    gap: 80px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;  
+    padding: 50px;
+}
+.trans{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,auto));
+    gap: 40px;
+    padding: 20px;
+    max-width: 300px;
+   
+}
+.imgbox{
+    display: flex;
+    gap: 50px;
+    height: 150px;
+    width: 150px;
+    justify-content: center;    
+    border: 5px  solid #ffc107;
+    padding: 18px;
+    background-color: white;
+}
+.imgbox :hover{
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+
+ .title{
+    display: flex;
+    align-items: center;
+    padding-left: 40px;
+    font-size: 15px;
+ }
+
+ /* customer  */
+.container-Cus{
+    display: flex;
+   align-items: center;
+ background-color: #1B1E66;
+color: white;
+}
+
+/* Text Content */
+.Cus-sec{
+    margin: 100px;
+        display: flex;
+   align-items: center;
+ background-color: #1B1E66;
+color: white;
+}
+
+.sec-txt h1{ 
+font-size: 48px;
+margin-bottom: 30px;
+line-height: 50px;
+}
+
+.sec-txt p{
+    font-size: 30px;
+    margin-bottom: 30px;
+  line-height: 40px;
+}
+
+.book-ride{
+    width: 200px;
+    height: 50px;
+    color: rgb(0, 0, 0);
+    background-color: white;
+    border: none;
+    font-size: 20px;
+  border-radius: 10px;
+   font-weight: 600;
+   cursor: pointer;
+}
+
+.book-ride:hover{
+    background-color: #007bff;
+    color: white;
+    transition: .5s ;
+}
+
+/* Image Content */
+ .Cus-img-sec{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 50px;
+    max-width: 40%;
+    align-items: center;
+    justify-content: center;  
+ }
+
+.Cus-img-sec div img{
+    width: 280px;
+    height: 180px;
+    margin: 20px;
+    border-radius: 20px;
+    object-fit: cover;
+} 
+
+/* Driver Style */
+
+
+.Driver-Main-Section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1B1E66;
+    color:white
+}
+
+
+ .Driver-container{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 50px;
+  max-width: 40%;
+  border-radius: 90px;
+  align-items: center;
+  justify-content: center;
+ }
+.Driver-container div img{
+    width: 280px;
+    margin: 20px;
+    border-radius: 20px;
+}
+.Driver-container .Driver4 img{
+    width:280px;
+    height: 190px;
+}
+
+/* driver text section */
+
+.Driver-text-container{
+    margin: 100px;
+}
+.Driver-text-container #Earnings-btn{
+    width: 200px;
+    height: 50px;
+    font-size: 20px;
+    font-weight: 600;
+    border: none;
+    margin-top: 50px;
+    border-radius: 10px;
+    background: white;
+    cursor: pointer;
+}
+#Earnings-btn:hover{
+        transition: 0.5s;
+        background-color: #007bff;
+        color: white;
+
+}
+.Driver-text-container h1{
+    font-size: 48px;
+    margin-bottom:30px;
+}
+.Driver-text-container p{
+    font-size: 30px;
+    line-height: 40px;
+}
