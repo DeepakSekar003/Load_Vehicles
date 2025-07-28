@@ -3,6 +3,10 @@ import RadioBox from "../components/RadioBox"
 import InputBox from "../components/InputBox";
 import SearchButton from "../components/SearchButton";
 import main from "../assets/main.jpg";
+import img1 from "../assets/img1.jpg"
+import img2 from "../assets/img2.jpg"
+import img3 from "../assets/img 3.jpg"
+import img4 from "../assets/img 4.jpg"
 
 export default function HomePage() {
   return (
@@ -32,6 +36,25 @@ export default function HomePage() {
         </div>
 
       </section>
+{/* Home customer sec */}
+
+    <section className='flex items-center justify-center '>
+        <div className='   w-[40%] m-4   '>
+          <h1 className='text-5xl mb-5 '>Delivering More Than Just Goods</h1>
+          <p className='text-3xl mb-5  '>Your logistics partner for smooth transportation.</p>
+          <button className='w-32  bg-green-900 h-12 text-lg rounded-md text-white  font-bold cursor-pointer  hover:bg-green-950 '>Book Ride</button>
+        </div>
+
+        <div className='  flex flex-wrap  justify-center max-w-[50%]  my-28  '>
+
+          <img src={img1} alt="img" className='xl:w-[280px] lg:w-[200px] lg:h-[140px] xl:h-[180px] m-[15px] rounded-xl '  />
+          <img src={img2} alt="img" className='xl:w-[280px] lg:w-[200px] lg:h-[140px] xl:h-[180px] m-[15px] rounded-xl  '  />
+          <img src={img3} alt="img" className='xl:w-[280px] lg:w-[200px] lg:h-[140px] xl:h-[180px] m-[15px] rounded-xl  '  />
+          <img src={img4} alt="img" className='xl:w-[280px] lg:w-[200px] lg:h-[140px] xl:h-[180px] m-[15px] rounded-xl  '  />
+        </div>
+
+      </section> 
+       
     </div>
   )
 }
