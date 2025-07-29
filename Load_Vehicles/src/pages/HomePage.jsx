@@ -1,7 +1,5 @@
 import Navbar from "../components/Navbar";
-import RadioBox from "../components/RadioBox"
-import InputBox from "../components/InputBox";
-import SearchButton from "../components/SearchButton";
+import {InputBox,SearchButton, RadioBox} from "../components/InputBox";
 import main from "../assets/main.jpg";
 import images from "../images.json";
 import img1 from "../assets/img1.jpg"
