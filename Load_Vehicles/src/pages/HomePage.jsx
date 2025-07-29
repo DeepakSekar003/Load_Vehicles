@@ -153,7 +153,7 @@ export default function HomePage() {
       </section>
 
 
-      <section className=" lg:flex bg-[#052038]  h-screen  px-23">
+      <section className=" lg:flex bg-[#052038]  h-screen  px-20">
         <div className=" flex flex-col  max-w-1/2 px-[50px] py-[20px] ">
           <div className=" flex  justify-center  xl:ml-24">
             <img src={Driver1} alt="driver-img1" className="lg:w-[200px] xl:w-[280px] m-[15px] xl:m-4 lg:h-[140px] xl:h-[180px] rounded-[20px] " />
@@ -164,10 +164,10 @@ export default function HomePage() {
             <img src={Driver4} alt="driver-img4" className="lg:w-[200px] xl:w-[280px] m-[15px] xl:m-4 lg:h-[140px] xl:h-[180px] rounded-[20px]" />
           </div>
         </div>
-        <div className="ml-72 mt-24 ">
+        <div className="ml-35 mt-24 ">
           <div className="flex flex-col ">
             <h1 className="text-5xl  mb-5 text-white font-bold ">Flexible Hours & <br/> High Earnings</h1>
-            <p className=" text-3xl  mb-5 text-white ">Join as a Driver and earn on your own terms.<br/>
+            <p className=" text-3xl  mb-5 text-white ">Join as a Driver and earn on your own terms.
               Driver whenever you want.</p>
 
             <button className="w-32 h-12  rounded-[10px] bg-green-900 font-bold mt-[20px] text-white cursor-pointer hover:bg-green-950 ">Start Earning</button>
