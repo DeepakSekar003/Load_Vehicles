@@ -41,17 +41,17 @@ export default function HomePage() {
 
       <section className='flex items-center justify-center '>
         <div className='   w-[40%] m-4   '>
-          <h1 className='text-5xl mb-5 '>Delivering More Than Just Goods</h1>
-          <p className='text-3xl mb-5  '>Your logistics partner for smooth transportation.</p>
-          <button className='w-32  bg-green-900 h-12 text-lg rounded-md text-white  font-bold cursor-pointer  hover:bg-green-950 '>Book Ride</button>
+          <h1 className='text-5xl mb-5 2xl:text-6xl'>Delivering More Than Just Goods</h1>
+          <p className='text-3xl mb-5 2xl:text-4xl '>Your logistics partner for smooth transportation.</p>
+          <button className='w-32 2xl:w-36 bg-green-900 h-12 2xl:h-14 2xl:text-xl text-lg rounded-md text-white  font-bold cursor-pointer  hover:bg-green-950 '>Book Ride</button>
         </div>
 
         <div className='  flex flex-wrap  justify-center max-w-[50%]  my-36  '>
 
-          <img src={img1} alt="img" className='xl:w-[280px] lg:w-[200px] lg:h-[140px] xl:h-[180px] m-[15px] rounded-xl ' />
-          <img src={img2} alt="img" className='xl:w-[280px] lg:w-[200px] lg:h-[140px] xl:h-[180px] m-[15px] rounded-xl  ' />
-          <img src={img3} alt="img" className='xl:w-[280px] lg:w-[200px] lg:h-[140px] xl:h-[180px] m-[15px] rounded-xl  ' />
-          <img src={img4} alt="img" className='xl:w-[280px] lg:w-[200px] lg:h-[140px] xl:h-[180px] m-[15px] rounded-xl  ' />
+          <img src={img1} alt="img" className='xl:w-[280px] lg:w-[200px] lg:h-[140px] xl:h-[180px] m-[15px] rounded-xl 2xl:w-[300px] 2xl:h-[200px] ' />
+          <img src={img2} alt="img" className='xl:w-[280px] lg:w-[200px] lg:h-[140px] xl:h-[180px] m-[15px] rounded-xl 2xl:w-[300px] 2xl:h-[200px] ' />
+          <img src={img3} alt="img" className='xl:w-[280px] lg:w-[200px] lg:h-[140px] xl:h-[180px] m-[15px] rounded-xl 2xl:w-[300px] 2xl:h-[200px] ' />
+          <img src={img4} alt="img" className='xl:w-[280px] lg:w-[200px] lg:h-[140px] xl:h-[180px] m-[15px] rounded-xl 2xl:w-[300px] 2xl:h-[200px] ' />
         </div>
 
       </section>
