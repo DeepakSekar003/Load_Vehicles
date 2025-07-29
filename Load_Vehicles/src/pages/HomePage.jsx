@@ -2,8 +2,6 @@ import Navbar from "../components/Navbar";
 import RadioBox from "../components/RadioBox"
 import InputBox from "../components/InputBox";
 import SearchButton from "../components/SearchButton";
-
-
 import main from "../assets/main.jpg";
 import images from "../images.json";
 import img1 from "../assets/img1.jpg"
@@ -14,7 +12,6 @@ import Driver1 from "../assets/Driver Section 1.jpg"
 import Driver2 from "../assets/Driver Section 2.jpg"
 import Driver3 from "../assets/Driver Section 3.jpg"
 import Driver4 from "../assets/Driver Section 4.jpg"
-
 
 export default function HomePage() {
   const firstImage = images[0];
@@ -52,89 +49,87 @@ export default function HomePage() {
 
       </section>
 
- <section>
-          <h1 className="text-left text-2xl  mt-9 ml-5 font-bold 2xl:text-6xl">
-            Our Services
-          </h1>
-          <div className="truck grid grid-cols-3 gap-4 p-[30px]  justify-items-center ">
-            <div className="text">
-              <div className="image  h-[180px] w-[210px]  g-[50px] border-[5px] border-solid border-[#ffc107]   bg-white  2xl:h-[200px]">
-                <img
-                  src={`/images/${sixthImage.name}`}
-                  alt={sixthImage}
-                  className="h-[150px]  w-[180px] 2xl:w-[300px] m-2  hover:scale-110 transition duration-500 object-cover 2xl:h-[180px]"
-                />
-              </div>
-              <h2 className="title  font-bold text-center p-5 2xl:text-[25px]">
-                ZOR AUTO
-              </h2>
+      <section>
+        <h1 className="text-left text-2xl  mt-9 ml-5 font-bold 2xl:text-6xl">
+          Our Services
+        </h1>
+        <div className="truck grid grid-cols-3 gap-4 p-[30px]  justify-items-center ">
+          <div className="text">
+            <div className="image  h-[180px] w-[210px]  g-[50px] border-[5px] border-solid border-[#ffc107]   bg-white  2xl:h-[200px]">
+              <img
+                src={`/images/${sixthImage.name}`}
+                alt={sixthImage}
+                className="h-[150px]  w-[180px] 2xl:w-[300px] m-2  hover:scale-110 transition duration-500 object-cover 2xl:h-[180px]"
+              />
             </div>
-
-            <div className="text">
-              <div className="image  h-[180px] w-[210px]  g-[50px] border-[5px] border-solid border-[#ffc107]  bg-white  2xl:h-[200px]">
-                <img
-                  src={`/images/${firstImage.name}`}
-                  alt={firstImage}
-                  className=" h-[150px] w-[180px] 2xl:w-[300px] m-2  hover:scale-110 transition duration-500 object-cover 2xl:h-[180px]"
-                />
-              </div>
-              <h2 className="title  font-bold text-center p-5 2xl:text-[25px]">
-                TATA ACE
-              </h2>
-            </div>
-
-            <div className="text">
-              <div className="image  h-[180px] w-[210px]  g-[50px] border-[5px] border-solid border-[#ffc107]  bg-white  2xl:h-[200px]">
-                <img
-                  src={`/images/${secondImage.name}`}
-                  alt={secondImage}
-                  className=" h-[150px] w-[180px] 2xl:w-[300px] m-2   hover:scale-110 transition duration-500 object-cover 2xl:h-[180px]"
-                />
-              </div>
-              <h2 className="title  font-bold text-center p-5 2xl:text-[25px]">
-                EICHER
-              </h2>
-            </div>
-            <div className="text">
-              <div className="image  h-[180px] w-[210px] m-3 g-[50px] border-[5px] border-solid border-[#ffc107]  bg-white  2xl:h-[200px]">
-                <img
-                  src={`/images/${thirdImage.name}`}
-                  alt={thirdImage}
-                  className=" h-[150px] w-[180px] 2xl:w-[300px] m-2   hover:scale-110 transition duration-500 object-cover 2xl:h-[180px]"
-                />
-              </div>
-              <h2 className="title  font-bold text-center p-3 2xl:text-[25px]">
-                TEMPO{" "}
-              </h2>
-            </div>
-            <div className="text">
-              <div className="image  h-[180px] w-[210px] g-[50px] border-[5px] border-solid border-[#ffc107]   bg-white m-3 2xl:h-[200px]">
-                <img
-                  src={`/images/${fourthImage.name}`}
-                  alt={fourthImage}
-                  className="h-[150px] w-[180px] 2xl:w-[300px] m-2  hover:scale-110 transition duration-500 object-cover 2xl:h-[180px]"
-                />
-              </div>
-              <h2 className="title  font-bold text-center p-3 2xl:text-[25px]">
-                TIPPER{" "}
-              </h2>
-            </div>
-            <div className="text">
-              <div className="image h-[180px] w-[210px] g-[50px] border-[5px] border-solid border-[#ffc107]  bg-white  m-3 2xl:h-[200px]">
-                <img
-                  src={`/images/${fifthImage.name}`}
-                  alt={fifthImage}
-                  className=" h-[150px] w-[180px] 2xl:w-[300px] m-2  hover:scale-110 transition duration-500 object-cover 2xl:h-[180px]"
-                />
-              </div>
-              <h2 className="title  font-bold text-center p-3 2xl:text-[25px]">
-                EV LOAD{" "}
-              </h2>
-            </div>
+            <h2 className="title  font-bold text-center p-5 2xl:text-[25px]">
+              ZOR AUTO
+            </h2>
           </div>
-        </section>
 
+          <div className="text">
+            <div className="image  h-[180px] w-[210px]  g-[50px] border-[5px] border-solid border-[#ffc107]  bg-white  2xl:h-[200px]">
+              <img
+                src={`/images/${firstImage.name}`}
+                alt={firstImage}
+                className=" h-[150px] w-[180px] 2xl:w-[300px] m-2  hover:scale-110 transition duration-500 object-cover 2xl:h-[180px]"
+              />
+            </div>
+            <h2 className="title  font-bold text-center p-5 2xl:text-[25px]">
+              TATA ACE
+            </h2>
+          </div>
 
+          <div className="text">
+            <div className="image  h-[180px] w-[210px]  g-[50px] border-[5px] border-solid border-[#ffc107]  bg-white  2xl:h-[200px]">
+              <img
+                src={`/images/${secondImage.name}`}
+                alt={secondImage}
+                className=" h-[150px] w-[180px] 2xl:w-[300px] m-2   hover:scale-110 transition duration-500 object-cover 2xl:h-[180px]"
+              />
+            </div>
+            <h2 className="title  font-bold text-center p-5 2xl:text-[25px]">
+              EICHER
+            </h2>
+          </div>
+          <div className="text">
+            <div className="image  h-[180px] w-[210px] m-3 g-[50px] border-[5px] border-solid border-[#ffc107]  bg-white  2xl:h-[200px]">
+              <img
+                src={`/images/${thirdImage.name}`}
+                alt={thirdImage}
+                className=" h-[150px] w-[180px] 2xl:w-[300px] m-2   hover:scale-110 transition duration-500 object-cover 2xl:h-[180px]"
+              />
+            </div>
+            <h2 className="title  font-bold text-center p-3 2xl:text-[25px]">
+              TEMPO{" "}
+            </h2>
+          </div>
+          <div className="text">
+            <div className="image  h-[180px] w-[210px] g-[50px] border-[5px] border-solid border-[#ffc107]   bg-white m-3 2xl:h-[200px]">
+              <img
+                src={`/images/${fourthImage.name}`}
+                alt={fourthImage}
+                className="h-[150px] w-[180px] 2xl:w-[300px] m-2  hover:scale-110 transition duration-500 object-cover 2xl:h-[180px]"
+              />
+            </div>
+            <h2 className="title  font-bold text-center p-3 2xl:text-[25px]">
+              TIPPER{" "}
+            </h2>
+          </div>
+          <div className="text">
+            <div className="image h-[180px] w-[210px] g-[50px] border-[5px] border-solid border-[#ffc107]  bg-white  m-3 2xl:h-[200px]">
+              <img
+                src={`/images/${fifthImage.name}`}
+                alt={fifthImage}
+                className=" h-[150px] w-[180px] 2xl:w-[300px] m-2  hover:scale-110 transition duration-500 object-cover 2xl:h-[180px]"
+              />
+            </div>
+            <h2 className="title  font-bold text-center p-3 2xl:text-[25px]">
+              EV LOAD{" "}
+            </h2>
+          </div>
+        </div>
+      </section>
 
 
       {/* Home customer sec */}
@@ -157,27 +152,27 @@ export default function HomePage() {
       </section>
 
 
-<section className=" lg:flex bg-[#052038]  h-screen  px-23">
-        <div className=" flex flex-col  max-w-4/12 md:w-1/2 px-[50px] py-[20px] ">
-        <div className=" flex  justify-center  xl:ml-24">
-                <img src={Driver1} alt="driver-img1" className="lg:w-[200px] xl:w-[300px] m-[15px] xl:m-4 lg:h-[140px] xl:h-[220px] rounded-[20px] "/>
-                <img src={Driver2} alt="driver-img2" className="lg:w-[200px] xl:w-[300px] m-[15px] xl:m-4 lg:h-[140px] xl:h-[220px]  rounded-[20px]" />
-        </div>
-        <div className=" flex  justify-center  xl:ml-24">
-                <img src={Driver3} alt="driver-img3" className="lg:w-[200px] xl:w-[300px] m-[15px] xl:m-4 lg:h-[140px] xl:h-[220px] rounded-[20px]" />
-                <img src={Driver4} alt="driver-img4" className="lg:w-[200px] xl:w-[300px] m-[15px] xl:m-4 lg:h-[140px] xl:h-[220px] rounded-[20px]" />
-        </div>
+      <section className=" lg:flex bg-[#052038]  h-screen  px-23">
+        <div className=" flex flex-col  max-w-1/2 px-[50px] py-[20px] ">
+          <div className=" flex  justify-center  xl:ml-24">
+            <img src={Driver1} alt="driver-img1" className="lg:w-[200px] xl:w-[280px] m-[15px] xl:m-4 lg:h-[140px] xl:h-[180px] rounded-[20px] " />
+            <img src={Driver2} alt="driver-img2" className="lg:w-[200px] xl:w-[280px] m-[15px] xl:m-4 lg:h-[140px] xl:h-[180px]  rounded-[20px]" />
+          </div>
+          <div className=" flex  justify-center  xl:ml-24">
+            <img src={Driver3} alt="driver-img3" className="lg:w-[200px] xl:w-[280px] m-[15px] xl:m-4 lg:h-[140px] xl:h-[180px] rounded-[20px]" />
+            <img src={Driver4} alt="driver-img4" className="lg:w-[200px] xl:w-[280px] m-[15px] xl:m-4 lg:h-[140px] xl:h-[180px] rounded-[20px]" />
+          </div>
         </div>
         <div className="ml-72 ">
-        <div className="max-w-[90%] md:w-full flex flex-col justify-center ">
-            <h1 className="text-5xl mb-5 text-white font-bold tracking-wider leading-relaxed">Flexible Hours & High Earnings</h1>
-            <p className=" text-3xl mb-5 text-white ">Join as a Driver and earn on your own terms.<br></br>
-                Driver whenever you want.</p>
-        
+          <div className="max-w-[90%] md:w-full flex flex-col justify-center ">
+            <h1 className="text-5xl xl:text-3xl mb-5 text-white font-bold ">Flexible Hours & <br /> High Earnings</h1>
+            <p className=" text-3xl xl:text-3xl mb-5 text-white ">Join as a Driver and earn on your own terms.<br></br>
+              Driver whenever you want.</p>
+
             <button className="w-32 h-12  rounded-[10px] bg-green-900 font-bold mt-[20px] text-white cursor-pointer hover:bg-green-950 ">Start Earning</button>
+          </div>
         </div>
-        </div>
-    </section>
+      </section>
 
 
     </div>
