@@ -2,12 +2,19 @@ import Navbar from "../components/Navbar";
 import RadioBox from "../components/RadioBox"
 import InputBox from "../components/InputBox";
 import SearchButton from "../components/SearchButton";
+
+
 import main from "../assets/main.jpg";
 import images from "../images.json";
 import img1 from "../assets/img1.jpg"
 import img2 from "../assets/img2.jpg"
 import img3 from "../assets/img 3.jpg"
 import img4 from "../assets/img 4.jpg"
+import Driver1 from "../assets/Driver Section 1.jpg"
+import Driver2 from "../assets/Driver Section 2.jpg"
+import Driver3 from "../assets/Driver Section 3.jpg"
+import Driver4 from "../assets/Driver Section 4.jpg"
+
 
 export default function HomePage() {
   const firstImage = images[0];
@@ -148,6 +155,30 @@ export default function HomePage() {
         </div>
 
       </section>
+
+
+<section className=" lg:flex bg-[#052038]  h-screen items-center justify-center  px-23">
+        <div className=" flex flex-col  max-w-4/12 md:w-1/2 px-[50px] py-[20px] ">
+        <div className=" flex  justify-center  xl:ml-24">
+                <img src={Driver1} alt="driver-img1" className="w-[180px] xl:w-[300px] m-[15px] xl:m-4 h-[180px] xl:h-[220px] rounded-[20px] "/>
+                <img src={Driver2} alt="driver-img2" className="w-[180px] xl:w-[300px] m-[15px] xl:m-4 h-[180px] xl:h-[220px]  rounded-[20px]" />
+        </div>
+        <div className=" flex  justify-center  xl:ml-24">
+                <img src={Driver3} alt="driver-img3" className="w-[180px] xl:w-[300px] m-[15px] xl:m-4 h-[180px] xl:h-[220px] rounded-[20px]" />
+                <img src={Driver4} alt="driver-img4" className="w-[180px] xl:w-[300px] m-[15px] xl:m-4 h-[180px] xl:h-[220px] rounded-[20px]" />
+        </div>
+        </div>
+        <div className="ml-72 ">
+        <div className="max-w-[90%] md:w-full flex flex-col justify-center ">
+            <h1 className="text-5xl mb-5 text-white font-bold tracking-wider leading-relaxed">Flexible Hours & High Earnings</h1>
+            <p className=" text-3xl mb-5 text-white ">Join as a Driver and earn on your own terms.<br></br>
+                Driver whenever you want.</p>
+        
+            <button className="w-32 h-12  rounded-[10px] bg-green-900 font-bold mt-[20px] text-white cursor-pointer hover:bg-green-950 ">Start Earning</button>
+        </div>
+        </div>
+    </section>
+
 
     </div>
   )
