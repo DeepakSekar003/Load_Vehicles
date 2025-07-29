@@ -13,7 +13,7 @@ import Driver2 from "../assets/Driver Section 2.jpg"
 import Driver3 from "../assets/Driver Section 3.jpg"
 import Driver4 from "../assets/Driver Section 4.jpg"
 
-export default function HomePage() {
+const HomePage = () => {
   const firstImage = images[0];
   const secondImage = images[1];
   const thirdImage = images[2];
@@ -180,3 +180,4 @@ export default function HomePage() {
   )
 
 }
+export default HomePage;
