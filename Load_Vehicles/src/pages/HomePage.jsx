@@ -149,23 +149,23 @@ export default function HomePage() {
         <div className='  flex flex-wrap  justify-center max-w-[50%]  my-36  '>
 
           <img src={img1} alt="img" className='xl:w-[280px] lg:w-[200px] lg:h-[140px] xl:h-[180px] m-[15px] rounded-xl ' />
-          <img src={img2} alt="img" className='xl:w-[280px] lg:w-[200px] lg:h-[140px] xl:h-[180px] m-[15px] rounded-xl  ' />
-          <img src={img3} alt="img" className='xl:w-[280px] lg:w-[200px] lg:h-[140px] xl:h-[180px] m-[15px] rounded-xl  ' />
-          <img src={img4} alt="img" className='xl:w-[280px] lg:w-[200px] lg:h-[140px] xl:h-[180px] m-[15px] rounded-xl  ' />
+          <img src={img2} alt="img" className='xl:w-[280px] lg:w-[200px] lg:h-[140px] xl:h-[180px] m-[15px] rounded-xl ' />
+          <img src={img3} alt="img" className='xl:w-[280px] lg:w-[200px] lg:h-[140px] xl:h-[180px] m-[15px] rounded-xl ' />
+          <img src={img4} alt="img" className='xl:w-[280px] lg:w-[200px] lg:h-[140px] xl:h-[180px] m-[15px] rounded-xl ' />
         </div>
 
       </section>
 
 
-<section className=" lg:flex bg-[#052038]  h-screen items-center justify-center  px-23">
+<section className=" lg:flex bg-[#052038]  h-screen  px-23">
         <div className=" flex flex-col  max-w-4/12 md:w-1/2 px-[50px] py-[20px] ">
         <div className=" flex  justify-center  xl:ml-24">
-                <img src={Driver1} alt="driver-img1" className="w-[180px] xl:w-[300px] m-[15px] xl:m-4 h-[180px] xl:h-[220px] rounded-[20px] "/>
-                <img src={Driver2} alt="driver-img2" className="w-[180px] xl:w-[300px] m-[15px] xl:m-4 h-[180px] xl:h-[220px]  rounded-[20px]" />
+                <img src={Driver1} alt="driver-img1" className="lg:w-[200px] xl:w-[300px] m-[15px] xl:m-4 lg:h-[140px] xl:h-[220px] rounded-[20px] "/>
+                <img src={Driver2} alt="driver-img2" className="lg:w-[200px] xl:w-[300px] m-[15px] xl:m-4 lg:h-[140px] xl:h-[220px]  rounded-[20px]" />
         </div>
         <div className=" flex  justify-center  xl:ml-24">
-                <img src={Driver3} alt="driver-img3" className="w-[180px] xl:w-[300px] m-[15px] xl:m-4 h-[180px] xl:h-[220px] rounded-[20px]" />
-                <img src={Driver4} alt="driver-img4" className="w-[180px] xl:w-[300px] m-[15px] xl:m-4 h-[180px] xl:h-[220px] rounded-[20px]" />
+                <img src={Driver3} alt="driver-img3" className="lg:w-[200px] xl:w-[300px] m-[15px] xl:m-4 lg:h-[140px] xl:h-[220px] rounded-[20px]" />
+                <img src={Driver4} alt="driver-img4" className="lg:w-[200px] xl:w-[300px] m-[15px] xl:m-4 lg:h-[140px] xl:h-[220px] rounded-[20px]" />
         </div>
         </div>
         <div className="ml-72 ">
