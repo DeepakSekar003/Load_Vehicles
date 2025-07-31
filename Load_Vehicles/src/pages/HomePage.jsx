@@ -1,7 +1,8 @@
 import Navbar from "../components/Navbar";
 import {InputBox,NextButton, RadioBox} from "../components/InputBox";
 import main from "../assets/main.jpg";
-import images from "../images.json";
+import  {useEffect,useState} from "react";
+import axios from "axios";
 import img1 from "../assets/img1.jpg"
 import img2 from "../assets/img2.jpg"
 import img3 from "../assets/img 3.jpg"
@@ -12,12 +13,25 @@ import Driver3 from "../assets/Driver Section 3.jpg"
 import Driver4 from "../assets/Driver Section 4.jpg"
 
 const HomePage = () => {
-  const firstImage = images[0];
-  const secondImage = images[1];
-  const thirdImage = images[2];
-  const fourthImage = images[3];
-  const fifthImage = images[4];
-  const sixthImage = images[5];
+  const[images, setImages] = useState ([]);
+
+  const nameMap ={
+    ace:"TATA ACE",
+    ecomet:"EICHER",
+    mini:"TEMPO",
+    press:"TIPPER",
+    Tata:"EV LOAD",
+    zor:"ZOR AUTO"
+  };
+  useEffect(() => {
+    axios
+    .get("https://6889e0dc4c55d5c73953f255.mockapi.io/api/lv/truck")
+    .then((response) => setImages(response.data))
+    .catch((error) => console.error("Error fetching data:", error));
+  }, []);
+
+  if(images.length === 0)
+    return <div className="text-black p-10">Loading...</div>;
 
   return (
     <div className="bg-[#7b7b7b] min-h-screen text-white">
@@ -50,84 +64,24 @@ const HomePage = () => {
       </section>
 
       <section>
-        <h1 className="text-left text-2xl  mt-9 ml-5 font-bold 2xl:text-6xl">
+               <h1 className="text-left text-2xl mt-5 ml-5 font-bold 2xl:text-6xl">
           Our Services
         </h1>
-        <div className="truck grid grid-cols-3 gap-4 p-[30px]  justify-items-center ">
-          <div className="text">
-            <div className="image  h-[180px] w-[210px]  g-[50px] border-[5px] border-solid border-[#ffc107]   bg-white  2xl:h-[200px]">
-              <img
-                src={`/images/${sixthImage.name}`}
-                alt={sixthImage}
-                className="h-[150px]  w-[180px] 2xl:w-[300px] m-2  hover:scale-110 transition duration-500 object-cover 2xl:h-[180px]"
-              />
+        <div className="truck grid grid-cols-3 gap-4 p-[30px] justify-items-center">
+          {images.map((img) => (
+            <div className="text" key={img.id}>
+              <div className="image h-[180px] w-[210px]  rounded-md g-[50px] border-[2px]  bg-stone-300 2xl:h-[200px]">
+                <img
+                  src={img.avatar}
+                  alt={img.name}
+                  className="h-[150px] w-[180px] 2xl:w-[300px] m-2 hover:scale-110 transition duration-500 object-cover 2xl:h-[180px]"
+                />
+              </div>
+              <h2 className="title font-bold text-center p-5 2xl:text-[25px]">
+                {nameMap[img.name] || img.name.toUpperCase()}
+              </h2>
             </div>
-            <h2 className="title  font-bold text-center p-5 2xl:text-[25px]">
-              ZOR AUTO
-            </h2>
-          </div>
-
-          <div className="text">
-            <div className="image  h-[180px] w-[210px]  g-[50px] border-[5px] border-solid border-[#ffc107]  bg-white  2xl:h-[200px]">
-              <img
-                src={`/images/${firstImage.name}`}
-                alt={firstImage}
-                className=" h-[150px] w-[180px] 2xl:w-[300px] m-2  hover:scale-110 transition duration-500 object-cover 2xl:h-[180px]"
-              />
-            </div>
-            <h2 className="title  font-bold text-center p-5 2xl:text-[25px]">
-              TATA ACE
-            </h2>
-          </div>
-
-          <div className="text">
-            <div className="image  h-[180px] w-[210px]  g-[50px] border-[5px] border-solid border-[#ffc107]  bg-white  2xl:h-[200px]">
-              <img
-                src={`/images/${secondImage.name}`}
-                alt={secondImage}
-                className=" h-[150px] w-[180px] 2xl:w-[300px] m-2   hover:scale-110 transition duration-500 object-cover 2xl:h-[180px]"
-              />
-            </div>
-            <h2 className="title  font-bold text-center p-5 2xl:text-[25px]">
-              EICHER
-            </h2>
-          </div>
-          <div className="text">
-            <div className="image  h-[180px] w-[210px] m-3 g-[50px] border-[5px] border-solid border-[#ffc107]  bg-white  2xl:h-[200px]">
-              <img
-                src={`/images/${thirdImage.name}`}
-                alt={thirdImage}
-                className=" h-[150px] w-[180px] 2xl:w-[300px] m-2   hover:scale-110 transition duration-500 object-cover 2xl:h-[180px]"
-              />
-            </div>
-            <h2 className="title  font-bold text-center p-3 2xl:text-[25px]">
-              TEMPO{" "}
-            </h2>
-          </div>
-          <div className="text">
-            <div className="image  h-[180px] w-[210px] g-[50px] border-[5px] border-solid border-[#ffc107]   bg-white m-3 2xl:h-[200px]">
-              <img
-                src={`/images/${fourthImage.name}`}
-                alt={fourthImage}
-                className="h-[150px] w-[180px] 2xl:w-[300px] m-2  hover:scale-110 transition duration-500 object-cover 2xl:h-[180px]"
-              />
-            </div>
-            <h2 className="title  font-bold text-center p-3 2xl:text-[25px]">
-              TIPPER{" "}
-            </h2>
-          </div>
-          <div className="text">
-            <div className="image h-[180px] w-[210px] g-[50px] border-[5px] border-solid border-[#ffc107]  bg-white  m-3 2xl:h-[200px]">
-              <img
-                src={`/images/${fifthImage.name}`}
-                alt={fifthImage}
-                className=" h-[150px] w-[180px] 2xl:w-[300px] m-2  hover:scale-110 transition duration-500 object-cover 2xl:h-[180px]"
-              />
-            </div>
-            <h2 className="title  font-bold text-center p-3 2xl:text-[25px]">
-              EV LOAD{" "}
-            </h2>
-          </div>
+          ))}
         </div>
       </section>
 
