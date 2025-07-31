@@ -92,7 +92,7 @@ const HomePage = () => {
         <div className='   w-[40%] m-4   '>
           <h1 className='text-5xl mb-5 2xl:text-6xl font-bold'>Delivering More Than Just Goods</h1>
           <p className='text-3xl mb-5 2xl:text-4xl '>Your logistics partner for smooth transportation.</p>
-          <button className='w-32 2xl:w-36 bg-green-900 h-12 2xl:h-14 2xl:text-xl text-lg rounded-md text-white  font-bold cursor-pointer  hover:bg-green-950 '>Book Ride</button>
+          <button className='w-32 2xl:w-36 bg-[#3d3d3d] h-12 2xl:h-14 2xl:text-xl text-lg rounded-md text-white  font-bold cursor-pointer hover:bg-[#1d1d1d] '>Book Ride</button>
         </div>
 
         <div className='  flex flex-wrap  justify-center max-w-[50%]  my-36  '>
