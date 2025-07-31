@@ -1,7 +1,7 @@
 import Navbar from "../components/Navbar";
 import {InputBox,NextButton, RadioBox} from "../components/InputBox";
 import main from "../assets/main.jpg";
-import React, {useEffect,useState} from "react";
+import  {useEffect,useState} from "react";
 import axios from "axios";
 import img1 from "../assets/img1.jpg"
 import img2 from "../assets/img2.jpg"
