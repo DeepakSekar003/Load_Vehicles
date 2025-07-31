@@ -1,5 +1,5 @@
 import Navbar from "../components/Navbar";
-import {InputBox,SearchButton, RadioBox} from "../components/InputBox";
+import {InputBox,NextButton, RadioBox} from "../components/InputBox";
 import main from "../assets/main.jpg";
 import images from "../images.json";
 import img1 from "../assets/img1.jpg"
@@ -20,29 +20,31 @@ const HomePage = () => {
   const sixthImage = images[5];
 
   return (
-    <div className="bg-[#052038] min-h-screen text-white">
+    <div className="bg-[#7b7b7b] min-h-screen text-white">
       <Navbar />
 
-      <section className="pt-12 2xl:pt-20 px-8 2xl:px-23">
-        <h1 className="text-3xl 2xl:text-5xl inline-block font-bold ml-10 2xl:ml-6 tracking-wider leading-relaxed">
-          Thousands of trucks at <br /> your fingertips...
+      <section className="pt-23 2xl:pt-20 px-8 2xl:px-23">
+        <h1 className="text-3xl mt-15 2xl:text-5xl inline-block font-bold ml-3 2xl:ml-6 tracking-wider leading-relaxed">
+          Thousands of trucks at <br /> your fingertips.
         </h1>
 
-        <div className="mt-6 ml-26 2xl:mt-15 2xl:text-2xl">
+        <div className="ml-3 mt-10 2xl:mt-15 ">
+          <InputBox placeholder="Enter Pickup Location" />
+          <InputBox placeholder="Enter Drop Location" /><br />
+        </div>
+
+        <div className="ml-3 flex flex-wrap gap-2 mt-5 2xl:mt-7 2xl:text-2xl ">
           <RadioBox />
         </div>
+         
+         <div className="ml-5  2xl:mt-15">
+         <NextButton label="Next" />
+         </div>
 
-        <div className="ml-26 mt-6 2xl:mt-15">
-          <InputBox placeholder="Enter Pickup Location" /><br />
-          <InputBox placeholder="Enter Drop Location" /><br />
-
-          <SearchButton label="Search" />
-        </div>
-
-        <div className="ml-130 2xl:ml-160 -mt-100 2xl:-mt-140">
+        <div className="ml-125 2xl:ml-160 -mt-95 2xl:-mt-140">
           <img src={main}
             alt="Main"
-            className="h-100 2xl:h-140 w-200 2xl:w-250 rounded-sm  object-cover" />
+            className="h-110 2xl:h-140 w-200 2xl:w-250 rounded-md  object-cover" />
         </div>
 
       </section>
@@ -151,7 +153,7 @@ const HomePage = () => {
       </section>
 
 
-      <section className=" lg:flex bg-[#052038]  h-screen  px-20">
+      <section className=" lg:flex  h-screen  px-20">
         <div className=" flex flex-col  max-w-1/2 px-[50px] py-[20px] ">
           <div className=" flex  justify-center  xl:ml-24">
             <img src={Driver1} alt="driver-img1" className="lg:w-[200px] xl:w-[280px] m-[15px] xl:m-4 lg:h-[140px] xl:h-[180px] rounded-[20px] " />
@@ -175,7 +177,7 @@ const HomePage = () => {
 
 
     </div>
-  )
+  ) 
 
 }
 export default HomePage;
