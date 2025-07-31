@@ -15,14 +15,6 @@ import Driver4 from "../assets/Driver Section 4.jpg"
 const HomePage = () => {
   const[images, setImages] = useState ([]);
 
-  const nameMap ={
-    ace:"TATA ACE",
-    ecomet:"EICHER",
-    mini:"TEMPO",
-    press:"TIPPER",
-    Tata:"EV LOAD",
-    zor:"ZOR AUTO"
-  };
   useEffect(() => {
     axios
     .get("https://6889e0dc4c55d5c73953f255.mockapi.io/api/lv/truck")
@@ -78,7 +70,7 @@ const HomePage = () => {
                 />
               </div>
               <h2 className="title font-bold text-center p-5 2xl:text-[25px]">
-                {nameMap[img.name] || img.name.toUpperCase()}
+                {img.name.toUpperCase()}
               </h2>
             </div>
           ))}
