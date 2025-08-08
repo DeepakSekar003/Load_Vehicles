@@ -2,6 +2,7 @@ import HomePage from "./pages/HomePage";
 import {BrowserRouter as Router,Routes,Route} from "react-router-dom";
 import SignupPage from "./components/SignupPage";
 import Aboutfnc from "./pages/About";
+import LoginPage from "./components/LoginPage";
 
 
 
@@ -13,7 +14,11 @@ function App() {
          <Routes>
            <Route exact path="/" element={<HomePage/>} />
            <Route exact path="/SignupPage" element={<SignupPage/>} />
+           <Route exact path="/LoginPage" element={<LoginPage/>}/>
            <Route exact path="/About" element={<Aboutfnc/>}/>
+
+          
+
 
 
          </Routes>
