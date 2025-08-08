@@ -13,19 +13,19 @@ function Aboutfnc() {
     return (
         <>
             <Navbar />
-            <div className="bg-[#7b7b7b] mt-28 ">
+            <div className="bg-[#7b7b7b] mt-22 xl:mt-0 xl:pt-23 xl:px-3">
                 <div className="flex py-5 ml-9">
                     <div className="relative">
-                        <img src={aboutpic} alt="" className="rounded-2xl mr-28 " />
-                        <div className=" absolute text-white rounded-full w-38 h-38 top-7 left-11/12 flex flex-col items-center justify-center bg-orange-500 text-center z-2 shadow-lg">
-                            <span className="text-5xl  mb-5 text-white font-bold">17+</span>
+                        <img src={aboutpic} alt="" className="rounded-2xl mr-28 xl:w-11/12   " />
+                        <div className=" absolute text-white rounded-full w-38 xl:w-30 h-38 xl:h-30 top-7  left-11/12 xl:left-4/5 flex flex-col items-center justify-center bg-orange-500 text-center z-2 shadow-lg">
+                            <span className="text-5xl xl:text-3xl  mb-5 xl:mb-3 text-white font-bold">17+</span>
                             <p className="leading-tight ">Years of <br></br> Experience</p>
                         </div>
                     </div>
                     <div className="flex items-center m-4">
-                        <div className="ml-9 font-sans">
+                        <div className="ml-9 xl:ml-1 font-sans">
                             <h1 className=" text-4xl  mb-5 text-white font-bold">We are the Moveing Leaders</h1>
-                            <span className=" text-3xl  mb-5 text-white"> Our team ensures safe, timely deliveries—whether <br></br>it’s residential, commercial, or  long-distance  moves. <br></br> We prioritize customer satisfaction with every service we provide.</span>
+                            <span className=" text-3xl xl:text-2xl  mb-5 text-white"> Our team ensures safe, timely deliveries—whether <br></br>it’s residential, commercial, or  long-distance  moves. <br></br> We prioritize customer satisfaction with every service we provide.</span>
                         </div>
                     </div>
                 </div>
@@ -53,13 +53,10 @@ function Aboutfnc() {
 
                 </div>
 
-
-
-
                 <div className="flex py-5  ml-9">
                     <div className="mt-20 relative">
-                        <img src={footer} alt="" className=" w-[900px] h-[650px] rounded-2xl" />
-                        <div className=" absolute flex items-center border-white border-2 top-5 left-140">
+                        <img src={footer} alt="" className=" w-[900px] xl:w-xl h-[650px] xl:h-10/12 rounded-2xl" />
+                        <div className=" absolute flex items-center border-white border-2 top-5 xl:top-7 left-140 xl:left-2/5">
                             <div className=" mr-5">
                                 <h1 className="text-5xl font-bold text-white">4.8 </h1>
                             </div>
@@ -69,23 +66,23 @@ function Aboutfnc() {
                             </div>
                         </div>
                     </div>
-                    <div className="max-w-2/5">
-                        <div className=" ml-9  mt-38">
-                            <p className=" mb-5 text-white text-5xl font-bold">Profestional Service Ready For Your Moveing Plan</p>
+                    <div className="max-w-2/5 xl:ml-10">
+                        <div className=" ml-9 xl:ml-2  mt-38 xl:mt-30">
+                            <p className=" mb-5 text-white text-5xl xl:text-3xl font-bold">Profestional Service Ready For Your Moveing Plan</p>
                         </div>
-                        <div className="grid grid-cols-2 ml-9  mt-15">
-                            <div>
-                                <img src={homeicon} alt="" className=" w-25" />
+                        <div className="grid grid-cols-2   mt-15 xl:mt-4">
+                            <div className=" xl:w-70">
+                                <img src={homeicon} alt="" className=" w-25 xl:w-20" />
                                 <h1 className="text-2xl text-white font-bold">Domestic Moves</h1>
                                 <p className="text-white text-2xl mt-5"> We offer secure and efficient domestic moves tailored
                                     to your needs.  From careful packing to on-time delivery
                                     ,our team ensure a smooth relocation experience
                                 </p>
                             </div>
-                            <div className="ml-20">
-                                <img src={officeicon} alt="" className="w-25" />
+                            <div className="ml-20 xl:ml-9 xl:w-70">
+                                <img src={officeicon} alt="" className="w-25 xl:w-20" />
                                 <h1 className="text-2xl text-white font-bold">Office Moves</h1>
-                                <p className="text-white text-2xl w-96 mt-5">We specialize in hassle-free office moves with minimal downtime
+                                <p className="text-white text-2xl w-96 xl:w-62 mt-5">We specialize in hassle-free office moves with minimal downtime
                                     .  Count on us for a smooth, organized and professional relocation.
                                 </p>
                             </div>
