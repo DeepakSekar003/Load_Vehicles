@@ -1,7 +1,6 @@
-import { Link } from "react-router-dom";
 import { DriverFileuplod, NextButton, InputBox, Date } from "../components/InputBox";
 
-const Filesuplod = () => {
+const Filesuplod = ({Next}) => {
   return (
     <div className=" bg-[#7b7b7b] min-h-screen text-white">
       <div className="flex justify-center items-center pt-10 flex-row gap-2 ">
@@ -20,11 +19,10 @@ const Filesuplod = () => {
         <DriverFileuplod label="Uplod your Pan [Back]" />
         <div className="ml-8 mt-8">
           <InputBox placeholder="Enter Your Pan Number" />
-          <Link to="/Vehicles">
             <div className="flex mt-7 w-55">
-              <NextButton label="Next" />
-            </div>
-          </Link>
+              <NextButton label="Next" onClick= {Next}/>
+           </div>
+
         </div>
       </div>
     </div>

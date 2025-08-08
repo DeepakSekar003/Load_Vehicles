@@ -19,9 +19,9 @@ export function RadioBox() {
   )
 }
 
-export function NextButton({ label }) {
+export function NextButton({ label,onClick }) {
   return (
-    <button className="p-4 w-113 2xl:w-62  2xl:mt-10 bg-[#3d3d3d] hover:bg-[#1d1d1d] text-white font-bold cursor-pointer rounded-md">
+    <button onClick={onClick} className="p-4 w-113 2xl:w-62  2xl:mt-10 bg-[#3d3d3d] hover:bg-[#1d1d1d] text-white font-bold cursor-pointer rounded-md">
       {label}
     </button>
   )
