@@ -12,7 +12,7 @@ import Driver2 from "../assets/Driver Section 2.jpg"
 import Driver3 from "../assets/Driver Section 3.jpg"
 import Driver4 from "../assets/Driver Section 4.jpg"
 
-const HomePage = () => {
+const Homepage = () => {
   const[images, setImages] = useState ([]);
  
    useEffect(() => {
@@ -126,4 +126,4 @@ const HomePage = () => {
   ) 
 
 }
-export default HomePage;
+export default Homepage;
