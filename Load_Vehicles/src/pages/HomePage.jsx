@@ -14,16 +14,8 @@ import Driver4 from "../assets/Driver Section 4.jpg"
 
 const Homepage = () => {
   const[images, setImages] = useState ([]);
-
-  const nameMap ={
-    ace:"TATA ACE",
-    ecomet:"EICHER",
-    mini:"TEMPO",
-    press:"TIPPER",
-    Tata:"EV LOAD",
-    zor:"ZOR AUTO"
-  };
-  useEffect(() => {
+ 
+   useEffect(() => {
     axios
     .get("https://6889e0dc4c55d5c73953f255.mockapi.io/api/lv/truck")
     .then((response) => setImages(response.data))
@@ -42,7 +34,7 @@ const Homepage = () => {
           Thousands of trucks at <br /> your fingertips.
         </h1>
 
-        <div className="ml-3 mt-10 2xl:mt-15 ">
+        <div className=" flex gap-2 ml-5 mt-10 2xl:mt-15 ">
           <InputBox placeholder="Enter Pickup Location" />
           <InputBox placeholder="Enter Drop Location" /><br />
         </div>
@@ -51,11 +43,11 @@ const Homepage = () => {
           <RadioBox />
         </div>
          
-         <div className="ml-5  2xl:mt-15">
+         <div className="ml-5 mt-5 2xl:mt-15 ">
          <NextButton label="Next" />
          </div>
 
-        <div className="ml-125 2xl:ml-160 -mt-95 2xl:-mt-140">
+        <div className="ml-125 2xl:ml-160 -mt-93 2xl:-mt-140">
           <img src={main}
             alt="Main"
             className="h-110 2xl:h-140 w-200 2xl:w-250 rounded-md  object-cover" />
@@ -78,7 +70,7 @@ const Homepage = () => {
                 />
               </div>
               <h2 className="title font-bold text-center p-5 2xl:text-[25px]">
-                {nameMap[img.name] || img.name.toUpperCase()}
+                {img.name.toUpperCase()}
               </h2>
             </div>
           ))}
