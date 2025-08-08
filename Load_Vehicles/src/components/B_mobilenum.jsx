@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
+import React from "react";
 import { InputBox, NextButton } from "../components/InputBox";
-const B_mobilenum = () => {
+const B_mobilenum = ({Next}) => {
   return (
     <div className="flex flex-col space-y-6 items-center justify-center min-h-screen  bg-[#7b7b7b]">
       <div className="border border-white p-10 rounded-md">
@@ -11,13 +11,13 @@ const B_mobilenum = () => {
         <div className="mt-6">
           <InputBox placeholder="Enter Mobile Number" />
         </div>
-        <Link to="/Otp">
+  
           <div className="flex w-25 mt-3  ml-2">
 
-            <NextButton label="Next" />
+            <NextButton label="Next" onClick={Next} />
 
           </div>
-        </Link>
+    
       </div>
     </div>
   )

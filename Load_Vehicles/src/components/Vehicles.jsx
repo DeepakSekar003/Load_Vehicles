@@ -1,7 +1,6 @@
-import { Link } from "react-router-dom";
 import { DriverFileuplod, NextButton, Date } from "../components/InputBox"
 
-const Vehicles = () => {
+const Vehicles = ({Next}) => {
   return (
 
     <div className="bg-[#7b7b7b] min-h-screen text-white">
@@ -15,12 +14,10 @@ const Vehicles = () => {
       <div className="flex items-center justify-center flex-row ml-2 mt-2">
 
         <Date />
-        <Link to="/Accountdetail">
           <div className=" flex ml-4 w-55">
-            <NextButton label="Next" />
+            <NextButton label="Next" onClick= {Next} />
           </div>
-        </Link>
-      </div>
+        </div>
     </div>
 
 

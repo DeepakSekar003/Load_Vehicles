@@ -1,7 +1,6 @@
-import { Link } from "react-router-dom";
 import { InputBox, NextButton, Date } from "../components/InputBox";
 
-const Details = () => {
+const Details = ({Next}) => {
   return (
     <>
       <div className="flex  justify-center bg-[#7b7b7b]  items-center min-h-screen  ">
@@ -17,11 +16,11 @@ const Details = () => {
           <div className=" " >
             <Date />
           </div>
-          <Link to="/">
+        
             <div className="flex w-55 ">
-              <NextButton label="Submit" />
+              <NextButton label="Submit" onClick= {Next} />
             </div>
-          </Link>
+   
         </div>
       </div>
 
