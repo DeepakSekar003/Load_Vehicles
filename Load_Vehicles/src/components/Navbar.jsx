@@ -14,7 +14,7 @@ export default function Navbar() {
       </nav>
 
       <nav className="flex 2xl:text-2xl ml-auto space-x-6 2xl:space-x-8">
-        <Link to="#" className="text-white font-semibold hover:bg-white hover:text-[#7b7b7b] px-4 2xl:px-5 py-2 2xl:py-3 rounded-md cursor-pointer">Login</Link>
+        <Link to="/LoginPage" className="text-white font-semibold hover:bg-white hover:text-[#7b7b7b] px-4 2xl:px-5 py-2 2xl:py-3 rounded-md cursor-pointer">Login</Link>
         <Link to="/SignupPage" className="text-white font-semibold hover:bg-white hover:text-[#7b7b7b] px-4 2xl:px-5 py-2 2xl:py-3 rounded-md cursor-pointer">Sign-up </Link>
       </nav>
     </header>
