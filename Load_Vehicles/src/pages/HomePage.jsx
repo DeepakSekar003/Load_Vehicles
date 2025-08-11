@@ -12,10 +12,10 @@ import Driver2 from "../assets/Driver Section 2.jpg"
 import Driver3 from "../assets/Driver Section 3.jpg"
 import Driver4 from "../assets/Driver Section 4.jpg"
 
-const HomePage = () => {
+const Homepage = () => {
   const[images, setImages] = useState ([]);
-
-  useEffect(() => {
+ 
+   useEffect(() => {
     axios
     .get("https://6889e0dc4c55d5c73953f255.mockapi.io/api/lv/truck")
     .then((response) => setImages(response.data))
@@ -34,7 +34,7 @@ const HomePage = () => {
           Thousands of trucks at <br /> your fingertips.
         </h1>
 
-        <div className="ml-3 mt-10 2xl:mt-15 ">
+        <div className=" flex gap-2 ml-5 mt-10 2xl:mt-15 ">
           <InputBox placeholder="Enter Pickup Location" />
           <InputBox placeholder="Enter Drop Location" /><br />
         </div>
@@ -43,11 +43,11 @@ const HomePage = () => {
           <RadioBox />
         </div>
          
-         <div className="ml-5  2xl:mt-15">
+         <div className="ml-5 mt-5 2xl:mt-15 ">
          <NextButton label="Next" />
          </div>
 
-        <div className="ml-125 2xl:ml-160 -mt-95 2xl:-mt-140">
+        <div className="ml-125 2xl:ml-160 -mt-93 2xl:-mt-140">
           <img src={main}
             alt="Main"
             className="h-110 2xl:h-140 w-200 2xl:w-250 rounded-md  object-cover" />
@@ -126,4 +126,4 @@ const HomePage = () => {
   ) 
 
 }
-export default HomePage;
+export default Homepage;

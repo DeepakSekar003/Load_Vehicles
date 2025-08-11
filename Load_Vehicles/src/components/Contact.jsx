@@ -1,8 +1,11 @@
 import React from 'react'
 import { useState } from 'react'
 import contact from '../assets/contact.jpg'
+import Navbar from './Navbar';
+
 
 function Contact () {
+  
   const [youAre, setYouAre] = useState('');
   const [showQuery, setShowQuery] = useState(false);
   const [mobile, setMobile] = useState('');
@@ -20,7 +23,10 @@ function Contact () {
   };
 
   return (
+    <>
+    <Navbar />
     <section className='bg-[#7b7b7b] text-white'>
+
       <div className='flex  '>
       
       <form className='mx-auto space-y-4 p-5 pl-10'>
@@ -89,6 +95,7 @@ function Contact () {
       </div>
       </div>
     </section>
+    </>
   );
 }
 
