@@ -23,7 +23,7 @@ const Homepage = () => {
   }, []);
 
   if(images.length === 0)
-    return <div className="text-black p-10">Loading...</div>;
+    return <div className="text-black p-20">Loading...</div>;
 
   return (
     <div className="bg-[#7b7b7b] min-h-screen text-white">
