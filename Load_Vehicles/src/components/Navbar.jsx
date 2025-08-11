@@ -1,4 +1,5 @@
 import logo from "../assets/logo.png";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   return (
@@ -9,8 +10,8 @@ export default function Navbar() {
 
       <nav className="flex 2xl:text-2xl ml-8 2xl:ml-13 space-x-6 2xl:space-x-8">
         <a href="#" className="text-white font-semibold hover:bg-white hover:text-[#7b7b7b] px-4 2xl:px-5 py-2 2xl:py-3 rounded-md">About us</a>
-        <a href="#" className="text-white font-semibold hover:bg-white hover:text-[#7b7b7b] px-4 2xl:px-5 py-2 2xl:py-3 rounded-md">Contact us</a>
-        <a href="#" className="text-white font-semibold hover:bg-white hover:text-[#7b7b7b] px-4 2xl:px-5 py-2 2xl:py-3 rounded-md">Home</a>
+        <Link to ="/contact" className="text-white font-semibold hover:bg-white hover:text-[#7b7b7b] px-4 2xl:px-5 py-2 2xl:py-3 rounded-md">Contact us</Link>
+        <Link to="/home" className="text-white font-semibold hover:bg-white hover:text-[#7b7b7b] px-4 2xl:px-5 py-2 2xl:py-3 rounded-md">Home</Link>
       </nav>
 
       <nav className="flex 2xl:text-2xl ml-auto space-x-6 2xl:space-x-8">
