@@ -2,7 +2,7 @@ import { useState } from 'react'
 import B_mobilenum from './B_mobilenum'
 import Otp from './Otp'
 import HomePage from '../pages/HomePage'
-
+import SignupPage from "../components/SignupPage"
 const LoginPage = () => {
 
 const [flow,setFlow] = useState(null)
@@ -45,7 +45,7 @@ const renderSteps =()=>{
                     setSteps(0);
                     }}  
                 className='border w-[40%] h-[40%]   text-white text-xl rounded-md hover:bg-[#1d1d1d] text-center p-6 cursor-pointer' >Start Earning</button>
-                <p>Don't have an account? <a className='font-bold' href="#">Sign-up</a></p>
+                <p>Don't have an account? <a className='font-bold' href="/SignupPage">Sign-up</a></p>
                  
                 </div>
                

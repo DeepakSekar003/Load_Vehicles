@@ -3,7 +3,7 @@ import { AiOutlineCloudUpload } from "react-icons/ai";
 export function InputBox({ placeholder }) {
   return (
     <input type="text"
-      placeholder={placeholder}
+      placeholder={placeholder} 
       className="p-4 bg-white text-[#7b7b7b] w-55 2xl:w-62 2xl:mt-7 outline-none rounded-md" />
   )
 }
