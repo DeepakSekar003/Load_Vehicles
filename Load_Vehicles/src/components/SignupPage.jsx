@@ -6,6 +6,7 @@ import Fileuplod from "../components/Fileuplod";
 import Vehicles from "../components/Vehicles";
 import Accountdetail from "../components/Accountdetail";
 import Details from "../components/Details";
+import LoginPage from "../components/LoginPage"
 
 const SignupPage = () => {
   const [flowType, setFlowType] = useState(null); 
@@ -57,7 +58,7 @@ const SignupPage = () => {
             </button>
             <div className="flex items-center justify-center mt-15">
               <h1>Already have an account? </h1>&nbsp;
-              <a href="/login">Login</a>
+              <a className="font-bold" href="/LoginPage">Login</a>
             </div>
           </div>
         </div>
