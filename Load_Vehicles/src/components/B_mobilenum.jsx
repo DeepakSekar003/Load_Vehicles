@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { NextButton } from "../components/InputBox";
-import "react-toastify/dist/ReactToastify.css";
 import security from '../assets/securitylogo.png'
 
 const B_mobilenum = ({ Next }) => {
@@ -37,10 +36,19 @@ const B_mobilenum = ({ Next }) => {
 
     }
   };
+  useEffect(() => {
+    let timer;
+    if (show) {
+      timer = setTimeout(() => {
+        setshow(false);
+      }, 4000);
+    }
+    return () => clearTimeout(timer);
+  }, [show]);
 
   return (
     <div className="flex flex-col space-y-6 items-center justify-center min-h-screen  bg-[#7b7b7b]">
-      {show && (
+      {show &&  (
         <div className=" flex items-center w-84 bg-white rounded-2xl">
           <div className=" ">
             <img src={security} alt="" />

@@ -8,7 +8,7 @@ import Accountdetail from "../components/Accountdetail";
 import Details from "../components/Details";
 import LoginPage from "../components/LoginPage"
 
-const SignupPage = () => {
+const SignupPage = ({text}) => {
   const [flowType, setFlowType] = useState(null); 
   const [step, setStep] = useState(0);
 
@@ -23,7 +23,7 @@ const SignupPage = () => {
   const flowEarn = [
     <B_mobilenum Next={handleNext} />,
     <Otp Next={handleNext} />,
-    <Location Next={handleNext} />,
+    <Location Next={handleNext} placeholder={text} />,
     <Fileuplod Next={handleNext} />,
     <Vehicles Next={handleNext} />,
     <Accountdetail Next={handleNext} />,
