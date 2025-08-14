@@ -1,6 +1,5 @@
 import { NextButton } from "./InputBox";
 import { useState } from "react";
-
 const Otp = ({Next}) => {
   const [Otp, setOtp] = useState(new Array(4).fill(""))
   function handleChange(e, index) {
@@ -16,6 +15,7 @@ const Otp = ({Next}) => {
     e.target.previousElementSibling.focus();
   }
 }
+
   return (
     <div className="flex  flex-col space-y-6 items-center justify-center min-h-screen  bg-[#7b7b7b]">
       <div className="border border-white px-8 py-10 rounded-md">
@@ -43,9 +43,9 @@ const Otp = ({Next}) => {
             <NextButton label="Resend OTP" />
           </div>
         </div>
-          <div className=" flex mt-2 w-53">
+        <div className=" flex mt-2 w-53">
 
-            <NextButton label="Verify OTP"  onClick= {Next}/>
+          <NextButton label="Verify OTP" onClick={Next} />
 
          </div>
       </div>
@@ -56,3 +56,4 @@ const Otp = ({Next}) => {
 }
 
 export default Otp;
+
