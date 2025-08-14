@@ -3,7 +3,7 @@ import { AiOutlineCloudUpload } from "react-icons/ai";
 export function InputBox({ placeholder }) {
   return (
     <input type="text"
-      placeholder={placeholder}
+      placeholder={placeholder} 
       className="p-4 bg-white text-[#7b7b7b] w-55 2xl:w-62 2xl:mt-7 outline-none rounded-md" />
   )
 }
@@ -19,7 +19,7 @@ export function RadioBox() {
   )
 }
 
-export function NextButton({ label,onClick }) {
+export function NextButton({ label, onClick }) {
   return (
     <button onClick={onClick} className="p-4 w-113 2xl:w-62  2xl:mt-10 bg-[#3d3d3d] hover:bg-[#1d1d1d] text-white font-bold cursor-pointer rounded-md">
       {label}
@@ -31,7 +31,7 @@ export function DriverFileuplod({ label }) {
   return (
     <label className="flex">
       <div className="border-2 rounded-md border-dotted px-5 py-8">
-        <p className="flex  justify-center items-center text-sm font-semibold">{label}</p>
+        <p className="flex justify-center items-center text-sm font-semibold">{label}</p>
         <AiOutlineCloudUpload className="ml-7 size-25" />
         <p className="flex mt-6 font-semibold text-sm"> File with JPG or PNG format</p>
       </div>
