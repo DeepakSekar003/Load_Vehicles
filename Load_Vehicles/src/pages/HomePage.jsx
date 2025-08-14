@@ -1,5 +1,6 @@
 import Navbar from "../components/Navbar";
 import {InputBox,NextButton, RadioBox} from "../components/InputBox";
+import Searchinput from '../components/inputPD'
 import main from "../assets/main.jpg";
 import  {useEffect,useState} from "react";
 import axios from "axios";
@@ -14,7 +15,7 @@ import Driver4 from "../assets/Driver Section 4.jpg"
 
 const Homepage = () => {
   const[images, setImages] = useState ([]);
- 
+
    useEffect(() => {
     axios
     .get("https://6889e0dc4c55d5c73953f255.mockapi.io/api/lv/truck")
@@ -34,9 +35,9 @@ const Homepage = () => {
           Thousands of trucks at <br /> your fingertips.
         </h1>
 
-        <div className=" flex gap-2 ml-5 mt-10 2xl:mt-15 ">
-          <InputBox placeholder="Enter Pickup Location" />
-          <InputBox placeholder="Enter Drop Location" /><br />
+        <div className=" flex gap-2 ml-5 mt-10 2xl:mt-28 ">
+          <Searchinput text={"Enter Pickup Location"}/>
+          <Searchinput text={"Enter Drop Location"} /><br></br>
         </div>
 
         <div className="ml-3 flex flex-wrap gap-2 mt-5 2xl:mt-7 2xl:text-2xl ">
