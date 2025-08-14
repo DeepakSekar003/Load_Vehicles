@@ -49,7 +49,7 @@ const B_mobilenum = ({ Next }) => {
         </div>
       )}
       <div className="border border-white p-10 rounded-md">
-        <h1 className=" 2xl:text-5xl inline-block font-bold ml-3 2xl:ml-6 text-white  ">
+        <h1 className=" 2xl:text-5xl inline-block font-bold  2xl:ml-6 text-white  ">
           Enter your mobile number <br />  to get a OTP.
         </h1>
         <div className="mt-6">
@@ -64,7 +64,6 @@ const B_mobilenum = ({ Next }) => {
         </div>
 
       </div>
-      {/* <ToastContainer/> */}
     </div>
   )
 
