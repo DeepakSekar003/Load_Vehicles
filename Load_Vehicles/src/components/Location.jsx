@@ -1,4 +1,5 @@
-import { InputBox, NextButton } from "../components/InputBox";
+import { NextButton } from "../components/InputBox";
+import Searchinput from '../components/inputPD'
 
 const Location = ({Next}) => {
   return (
@@ -6,7 +7,8 @@ const Location = ({Next}) => {
       <div className="border p-8 rounded-md">
         <h1 className="text-3xl mb-2  font-semibold">Location</h1>
         <div className="">
-          <InputBox placeholder="Enter Your Location" />
+          {/* <InputBox placeholder="Enter Your Location" /> */}
+          <Searchinput text={"Enter the location"} />
             <div className="flex w-25 mt-3 ">
               <NextButton label="Next" onClick= {Next} />
             </div>
