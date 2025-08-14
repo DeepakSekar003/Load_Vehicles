@@ -1,59 +1,83 @@
+import { useEffect, useRef, useState } from "react";
+import axios from "axios";
 import { NextButton } from "./InputBox";
-import { useState } from "react";
-const Otp = ({Next}) => {
-  const [Otp, setOtp] = useState(new Array(4).fill(""))
-  function handleChange(e, index) {
-  if (isNaN(e.target.value)) return false;
+import security from "../assets/securitylogo.png";
 
-  setOtp([
-    ...Otp.map((data, indx) => (indx === index ? e.target.value : data))
-  ]);
+const Otp = ({ Next }) => {
+  const [otp, setOtp] = useState(["", "", "", ""]);
+  const [serverOtp, setServerOtp] = useState("");
+  const [error, setError] = useState("");
+  const inputs = useRef([]);
 
-  if (e.target.value && e.target.nextElementSibling) {
-    e.target.nextElementSibling.focus();
-  } else if (!e.target.value && e.target.previousElementSibling) {
-    e.target.previousElementSibling.focus();
-  }
-}
+  useEffect(() => {
+    axios
+      .get("https://6889e0dc4c55d5c73953f255.mockapi.io/api/lv/otp")
+      .then((res) => {
+        if (res.data.length > 0) setServerOtp(res.data[0].otp);
+        setOtp(["", "", "", ""]);
+        inputs.current[0].focus();
+      });
+  }, []);
+
+  const handleChange = (e, i) => {
+    if (isNaN(e.target.value)) return;
+    let newOtp = [...otp];
+    newOtp[i] = e.target.value;
+    setOtp(newOtp);
+
+    if (e.target.value && i < otp.length - 1) inputs.current[i + 1].focus();
+    else if (!e.target.value && i > 0) inputs.current[i - 1].focus();
+  };
+
+  const verifyOtp = () => {
+    if (otp.join("") === serverOtp) {
+      Next();
+    } else {
+      setError("Invalid OTP, please try again.");
+      setOtp(["", "", "", ""]);
+      inputs.current[0].focus();
+      setTimeout(() => setError(""), 4000);
+    }
+  };
 
   return (
-    <div className="flex  flex-col space-y-6 items-center justify-center min-h-screen  bg-[#7b7b7b]">
-      <div className="border border-white px-8 py-10 rounded-md">
-        <h1 className=" 2xl:text-5xl text-3xl inline-block font-bold mr-21 2xl:ml-6 py-4 text-white">
-          OTP verication
-        </h1> <br />
-        <h2 className=" inline-block font-semibold  text-white">
-          Enter the Verification code we just sent  <br />to your mobile number.
-        </h2>
-         
-          <div className="">            
-               {Otp.map((data,i)=>{
-                  return <input type="text" 
-                               value={data} 
-                               maxLength={1}
-                               onChange={(e)=>handleChange(e, i)} required
-                               className=" mr-2 mt-4 w-10 h-10 text-white text-center  outline-none border  rounded-md "/>
-                })
-               }
-          
-          </div>
-        <div class="flex items-center justify-center mt-4 mr-25">
-          <span id="otp-timer" class="text-sm mr-3 text-white font-medium"> 00:00</span>
-          <div className=" flex  bg-[#3d3d3d] hover:bg-[#1d1d1d] text-white w-40 rounded-md">
-            <NextButton label="Resend OTP" />
-          </div>
+    <div className="flex flex-col space-y-6 items-center justify-center min-h-screen bg-[#7b7b7b]">
+      {error && (
+        <div className="flex items-center w-72 bg-white rounded-2xl p-2 mb-4">
+          <img src={security} alt="!" className="w-6 h-6 mr-2" />
+          <p>{error}</p>
         </div>
-        <div className=" flex mt-2 w-53">
+      )}
 
-          <NextButton label="Verify OTP" onClick={Next} />
+      <div className="border border-white px-8 py-10 rounded-md">
+        <h1 className="text-3xl font-bold text-white mb-4">OTP Verification</h1>
+        <p className="text-white mb-4">
+          Enter the code we just sent to your mobile number.
+        </p>
 
-         </div>
+        <div className="flex gap-3 mb-4">
+          {otp.map((val, i) => (
+            <input
+              key={i}
+              type="text"
+              maxLength="1"
+              value={val}
+              onChange={(e) => handleChange(e, i)}
+              ref={(el) => (inputs.current[i] = el)}
+              className="w-10 h-10 text-center text-white bg-transparent border rounded-md"
+            />
+          ))}
+        </div>
+
+        <div className="flex items-center justify-center mb-4 w-60">
+          <span className="text-sm text-white mr-3">00:00</span>
+          <NextButton label="Resend OTP" />
+        </div>
+
+        <NextButton label="Verify OTP" onClick={verifyOtp} />
       </div>
-
     </div>
-
-  )
-}
+  );
+};
 
 export default Otp;
-
