@@ -48,7 +48,7 @@ const B_mobilenum = ({ Next }) => {
 
   return (
     <div className="flex flex-col space-y-6 items-center justify-center min-h-screen  bg-[#7b7b7b]">
-      {show &&  (
+      {show && (
         <div className=" flex items-center w-84 bg-white rounded-2xl">
           <div className=" ">
             <img src={security} alt="" />
@@ -67,11 +67,13 @@ const B_mobilenum = ({ Next }) => {
 
         <div className="flex w-25 mt-3  ml-2">
 
-          <NextButton label="Next" onClick={() => checkNumber()} />
+          <NextButton label="Next &rarr;" onClick={() => checkNumber()} />
+
 
         </div>
 
       </div>
+
     </div>
   )
 

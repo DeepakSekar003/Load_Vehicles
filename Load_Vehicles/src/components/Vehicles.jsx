@@ -1,6 +1,6 @@
 import { DriverFileuplod, NextButton, Date } from "../components/InputBox"
 
-const Vehicles = ({Next}) => {
+const Vehicles = ({ Next, Back }) => {
   return (
 
     <div className="bg-[#7b7b7b] min-h-screen text-white">
@@ -14,10 +14,13 @@ const Vehicles = ({Next}) => {
       <div className="flex items-center justify-center flex-row ml-2 mt-2">
 
         <Date />
-          <div className=" flex ml-4 w-55">
-            <NextButton label="Next" onClick= {Next} />
-          </div>
+        <div className=" flex ml-4 w-55">
+          <NextButton label="Next &rarr; " onClick={Next} />
         </div>
+      </div>
+      <div className="flex w-25 ml-[5%]">
+        <NextButton label="&larr; Back" onClick={Back} />
+      </div>
     </div>
 
 

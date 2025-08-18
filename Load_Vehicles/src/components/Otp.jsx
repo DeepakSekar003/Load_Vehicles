@@ -3,7 +3,7 @@ import axios from "axios";
 import { NextButton } from "./InputBox";
 import security from "../assets/securitylogo.png";
 
-const Otp = ({ Next }) => {
+const Otp = ({ Next, Back }) => {
   const [otp, setOtp] = useState(["", "", "", ""]);
   const [serverOtp, setServerOtp] = useState("");
   const [error, setError] = useState("");
@@ -75,6 +75,10 @@ const Otp = ({ Next }) => {
         </div>
 
         <NextButton label="Verify OTP" onClick={verifyOtp} />
+      </div>
+
+      <div className="flex w-25 mr-[80%]">
+        <NextButton label="&larr; Back" onClick={Back} />
       </div>
     </div>
   );
