@@ -8,26 +8,27 @@ import Accountdetail from "../components/Accountdetail";
 import Details from "../components/Details";
 import LoginPage from "../components/LoginPage"
 
-const SignupPage = ({text}) => {
-  const [flowType, setFlowType] = useState(null); 
+const SignupPage = ({ text }) => {
+  const [flowType, setFlowType] = useState(null);
   const [step, setStep] = useState(0);
 
   const handleNext = () => setStep((prev) => prev + 1);
+  const handleBack = () => setStep((prev) => (prev > 0 ? prev - 1 : prev));
 
   const flowBook = [
-    <B_mobilenum Next={handleNext} />,
-    <Otp Next={handleNext} />,
-    <Details />
+    <B_mobilenum Next={handleNext} Back={handleBack} />,
+    <Otp Next={handleNext} Back={handleBack} />,
+    <Details Back={handleBack} />
   ];
 
   const flowEarn = [
-    <B_mobilenum Next={handleNext} />,
-    <Otp Next={handleNext} />,
-    <Location Next={handleNext} placeholder={text} />,
-    <Fileuplod Next={handleNext} />,
-    <Vehicles Next={handleNext} />,
-    <Accountdetail Next={handleNext} />,
-    <Details />
+    <B_mobilenum Next={handleNext} Back={handleBack} />,
+    <Otp Next={handleNext} Back={handleBack} />,
+    <Location Next={handleNext} placeholder={text} Back={handleBack} />,
+    <Fileuplod Next={handleNext} Back={handleBack} />,
+    <Vehicles Next={handleNext} Back={handleBack} />,
+    <Accountdetail Next={handleNext} Back={handleBack} />,
+    <Details Back={handleBack} />
   ];
 
   const renderStep = () => {
