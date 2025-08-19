@@ -4,6 +4,10 @@ import SignupPage from "./components/SignupPage";
 import Aboutfnc from "./pages/About";
 import LoginPage from "./components/LoginPage";
 import Contact from "./components/Contact";
+import B_mobilenum from "./components/B_mobilenum.jsx";
+import Otp from "./components/Otp";
+
+
 
 function App() {
   return (
@@ -15,6 +19,9 @@ function App() {
           <Route exact path="/LoginPage" element={<LoginPage />} />
           <Route exact path="/About" element={<Aboutfnc />} />
           <Route exact path="/Contact" element={<Contact />} />
+           <Route exact path="/mobile" element={<B_mobilenum />} />
+           <Route exact path="/otp" element={<Otp />} />
+
         </Routes>
       </Router>
     </>

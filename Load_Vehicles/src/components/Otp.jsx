@@ -1,23 +1,11 @@
-import { useEffect, useRef, useState } from "react";
-import axios from "axios";
+import { useRef, useState } from "react";
 import { NextButton } from "./InputBox";
 import security from "../assets/securitylogo.png";
 
-const Otp = ({ Next }) => {
+const Otp = ({ Next, Back, selectedUser }) => {
   const [otp, setOtp] = useState(["", "", "", ""]);
-  const [serverOtp, setServerOtp] = useState("");
   const [error, setError] = useState("");
   const inputs = useRef([]);
-
-  useEffect(() => {
-    axios
-      .get("https://6889e0dc4c55d5c73953f255.mockapi.io/api/lv/otp")
-      .then((res) => {
-        if (res.data.length > 0) setServerOtp(res.data[0].otp);
-        setOtp(["", "", "", ""]);
-        inputs.current[0].focus();
-      });
-  }, []);
 
   const handleChange = (e, i) => {
     if (isNaN(e.target.value)) return;
@@ -30,7 +18,7 @@ const Otp = ({ Next }) => {
   };
 
   const verifyOtp = () => {
-    if (otp.join("") === serverOtp) {
+    if (otp.join("") === selectedUser?.otp) {
       Next();
     } else {
       setError("Invalid OTP, please try again.");
@@ -64,7 +52,7 @@ const Otp = ({ Next }) => {
               value={val}
               onChange={(e) => handleChange(e, i)}
               ref={(el) => (inputs.current[i] = el)}
-              className="w-10 h-10 text-center text-white bg-transparent border rounded-md"
+              className="w-10 h-10 text-center text-white bg-transparent border rounded-md outline-none"
             />
           ))}
         </div>
@@ -75,6 +63,9 @@ const Otp = ({ Next }) => {
         </div>
 
         <NextButton label="Verify OTP" onClick={verifyOtp} />
+      </div>
+      <div className="flex w-25 mr-[80%]">
+        <NextButton label="&larr; Back" onClick={Back} />
       </div>
     </div>
   );
