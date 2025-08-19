@@ -2,11 +2,37 @@ import React, { useState, useEffect } from "react";
 import { NextButton } from "../components/InputBox";
 import security from '../assets/securitylogo.png'
 
+/**
+ * B_mobilenum Component
+ *
+ * This component handles mobile number input, validates the format,
+ * checks the entered number against API data, and navigates to the
+ * next step if the number is valid.
+ * 
+ * @param {Function} props.setSelectedUser - Function to set the matched user from API
+ * @param {Function} props.Next - Callback function to proceed to the next step
+ */
+
 const B_mobilenum = ({ Next, setSelectedUser }) => {
   const [inputvalue, setinputvalue] = useState("");
   const [apivalue, setapivalue] = useState([]);
   const [show, setshow] = useState(false);
 
+/**
+ * Handle mobile number input changes
+ * allow only numeric values and restrict to  10 digits
+ * 
+ * @param {string} value-user input values 
+ */
+
+   const handlechange = (value) => {
+    const onlyNums = value.replace(/\D/g, "");
+    if (onlyNums.length <= 10) {
+      setinputvalue(onlyNums);
+    }
+  };
+
+  
   useEffect(() => {
     fetch("https://6889e0dc4c55d5c73953f255.mockapi.io/api/lv/otp")
       .then(res => res.json())
@@ -14,10 +40,21 @@ const B_mobilenum = ({ Next, setSelectedUser }) => {
       .catch((err) => console.error("API fetch error:", err));
   }, []);
 
-  const checkNumber = () => {
-    const matched = apivalue.find(
-      (item) => item.number.trim() === inputvalue.trim()
-    );
+  /**
+   * validate the entered mobile number against API data
+   * show error if invalid,otherwise proceeds to the next step
+   * 
+   */
+   const checkNumber = () => {
+    if (inputvalue.length !== 10) {
+      setshow(true);
+      return;
+    }
+
+    const matched = apivalue.find((item) => {
+      const numStr = String(item.number).replace(/\D/g, "");
+      return numStr === inputvalue;
+    });
 
     if (!matched) {
       setshow(true);
@@ -27,6 +64,9 @@ const B_mobilenum = ({ Next, setSelectedUser }) => {
       Next();
     }
   };
+  /**
+   * Automatically hide the message after 4 seconds
+   */
 
   useEffect(() => {
     let timer;
@@ -58,7 +98,8 @@ const B_mobilenum = ({ Next, setSelectedUser }) => {
           <input
             type="text"
             placeholder="Enter Mobile Number"
-            onChange={(e) => setinputvalue(e.target.value)}
+            value={inputvalue}
+            onChange={(e) => handlechange(e.target.value)}
             className="p-4 bg-white text-[#7b7b7b] w-55 2xl:w-62 2xl:mt-7 outline-none rounded-md"
           />
         </div>
