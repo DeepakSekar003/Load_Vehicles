@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import { NextButton } from "./InputBox";
 import security from "../assets/securitylogo.png";
 
+
 const Otp = ({ Next, Back, selectedUser }) => {
   const [otp, setOtp] = useState(["", "", "", ""]);
   const [error, setError] = useState("");
@@ -64,6 +65,7 @@ const Otp = ({ Next, Back, selectedUser }) => {
 
         <NextButton label="Verify OTP" onClick={verifyOtp} />
       </div>
+
       <div className="flex w-25 mr-[80%]">
         <NextButton label="&larr; Back" onClick={Back} />
       </div>

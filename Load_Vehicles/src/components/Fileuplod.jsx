@@ -1,6 +1,6 @@
 import { DriverFileuplod, NextButton, InputBox, Date } from "../components/InputBox";
 
-const Filesuplod = ({Next}) => {
+const Filesuplod = ({ Next, Back }) => {
   return (
     <div className=" bg-[#7b7b7b] min-h-screen text-white">
       <div className="flex justify-center items-center pt-10 flex-row gap-2 ">
@@ -19,11 +19,14 @@ const Filesuplod = ({Next}) => {
         <DriverFileuplod label="Uplod your Pan [Back]" />
         <div className="ml-8 mt-8">
           <InputBox placeholder="Enter Your Pan Number" />
-            <div className="flex mt-7 w-55">
-              <NextButton label="Next" onClick= {Next}/>
-           </div>
+          <div className="flex mt-7 w-55">
+            <NextButton label="Next &rarr; " onClick={Next} />
+          </div>
 
         </div>
+      </div>
+      <div className="flex w-25 ml-[5%]">
+        <NextButton label="&larr; Back" onClick={Back} />
       </div>
     </div>
 
