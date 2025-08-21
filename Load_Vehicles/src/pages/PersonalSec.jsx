@@ -1,7 +1,12 @@
-import { Date } from '../components/InputBox'
 import Navbar from '../components/Navbar'
-
+import { useState,useEffect } from 'react';
 const PersonalSec = ({Back}) => {
+       const [today, setToday] = useState('');
+      useEffect(() => { 
+        const date = new Date();
+        const formatted = date.toISOString().split('T')[0];
+        setToday(formatted)
+      }, []) 
     return (
         <>
             <Navbar />
@@ -22,10 +27,11 @@ const PersonalSec = ({Back}) => {
                             <option value="ZOR AUTO">ZOR AUTO</option>
                         </select>
                     <div className='mb-8'>
-                        <Date />
+                     <div className=" border w-55 p-4 border-white bg-white rounded-md text-gray-500  px-3">
+      <input type="date" className="focus:outline-none" min={today} onChange={() => {}}/>
+ </div>  
                     </div>
                     <button className='bg-white text-[#3d3d3d] text-lg w-40 mb-5  h-12 p-3 text-center rounded-md hover:font-bold cursor-pointer'>Book Ride</button>
-       
                     </div>
 
                     

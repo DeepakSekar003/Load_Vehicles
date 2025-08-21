@@ -9,8 +9,9 @@ export function InputBox({ placeholder }) {
   )
 }
 
+
 export function RadioBox({ options, selectedOption, onChange }) {
-  return ( 
+  return (  
     <>
         <div className="flex gap-0.5">
          {options.map((option)=>(
