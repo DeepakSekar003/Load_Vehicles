@@ -7,13 +7,17 @@ import Contact from "./components/Contact";
 import B_mobilenum from "./components/B_mobilenum.jsx";
 import Otp from "./components/Otp";
 
+import BussinessSec from "./pages/BussinessSec.jsx";
+
 
 
 function App() {
   return (
     <>
       <Router>
+        
         <Routes>
+          
           <Route exact path="/" element={<HomePage />} />
           <Route exact path="/SignupPage" element={<SignupPage />} />
           <Route exact path="/LoginPage" element={<LoginPage />} />
@@ -21,6 +25,7 @@ function App() {
           <Route exact path="/Contact" element={<Contact />} />
            <Route exact path="/mobile" element={<B_mobilenum />} />
            <Route exact path="/otp" element={<Otp />} />
+          <Route exact path="/BussinessSec" element={<BussinessSec />} />
 
         </Routes>
       </Router>
