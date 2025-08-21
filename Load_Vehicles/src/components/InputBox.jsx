@@ -1,5 +1,6 @@
 import { AiOutlineCloudUpload } from "react-icons/ai";
-import { useState } from 'react'
+import { useEffect, useState } from "react";
+
 export function InputBox({ placeholder }) {
   return (
     <input type="text"
@@ -8,17 +9,15 @@ export function InputBox({ placeholder }) {
   )
 }
 
-export function RadioBox() {
-      const [options,setoptions]=useState('Part Load');
-      const select=['Part Load','Full Load']
-  return (
+export function RadioBox({ options, selectedOption, onChange }) {
+  return ( 
     <>
         <div className="flex gap-0.5">
-         {select.map((option)=>(
+         {options.map((option)=>(
                 <button key={option}
-                onClick={()=>setoptions(option)}
+                onClick={()=>onChange(option)}
                 className={`p-4 w-55 rounded-md transition-all duration-200
-                ${options===option ? 'bg-[#9c9c9c] text-white shadow-md'
+                ${selectedOption===option ? 'bg-[#9c9c9c] text-white shadow-md'
                  : 'bg-white text-[#7b7b7b]  hover:bg-[#f2f0f0]]'}`} >{option}</button>
             ))}
     </div>
@@ -46,11 +45,10 @@ export function DriverFileuplod({ label }) {
     </label>
   )
 }
-
 export function Date() {
   return (
     <div className=" border w-55 p-4 border-white bg-white rounded-md text-gray-500  px-3">
       <input type="date" className="focus:outline-none" />
-    </div>
-  )
+</div>
+)
 }

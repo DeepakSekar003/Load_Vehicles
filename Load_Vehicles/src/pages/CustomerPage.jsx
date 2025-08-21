@@ -17,7 +17,7 @@ const CustomerPage = ({ Next }) => {
                             <Searchinput text={"Enter Drop Location"} />
                         </div>
 
-                        <RadioBox />
+                        <RadioBox options={["Business","Personal"]}/>
 
                         <button className='bg-white text-[#3d3d3d] text-lg w-40 mt-10 h-12 p-3 text-center rounded-md hover:font-bold cursor-pointer '>
                         Next</button>
