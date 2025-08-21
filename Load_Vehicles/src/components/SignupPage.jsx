@@ -7,6 +7,7 @@ import Vehicles from "../components/Vehicles";
 import Accountdetail from "../components/Accountdetail";
 import Details from "../components/Details";
 import LoginPage from "../components/LoginPage"
+import CustomerPage from "../pages/CustomerPage";
 
 const SignupPage = ({ text }) => {
   const [flowType, setFlowType] = useState(null);
@@ -20,7 +21,8 @@ const SignupPage = ({ text }) => {
 
     <B_mobilenum Next={handleNext} setSelectedUser={setSelectedUser} />,
     <Otp Next={handleNext} Back={handleBack} selectedUser={selectedUser} />,
-    <Details Back={handleBack} />
+    <Details Back={handleBack} Next={handleNext} />,
+    <CustomerPage Next={handleNext}/>
   ];
 
   const flowEarn = [

@@ -1,16 +1,32 @@
-
 import React, { useEffect, useState } from "react";
 
+/**
+ * Searchinput Component
+ *
+ * Provides a search input with debounce functionality and API integration.
+ * Fetches data from the API, filters results based on user input,
+ * and displays a dropdown with matching districts.
+ * @param {string} props.text - Placeholder text for the input field
+ */
 function Searchinput({ text }) {
   const [allData, setAllData] = useState([]);
   const [input, setInput] = useState("");
   const [show, setshow] = useState(false);
 
-  useEffect(() => {
-    fetch("https://688b26b82a52cabb9f50597e.mockapi.io/api/searchAPI")
+
+ useEffect(() => {
+    if(!input){
+      setAllData([]);
+      return;
+    }
+    const delaydebounce=setTimeout(() => {
+       fetch("https://688b26b82a52cabb9f50597e.mockapi.io/api/searchAPI")
       .then(res => res.json())
-      .then(data => setAllData(data));
-  }, []);
+      .then(data => setAllData(data))
+      .catch((err) => console.error("API fetch error:", err)); 
+    }, 300);    
+    return()=>clearTimeout(delaydebounce)
+  }, [input]);
 
   const results = allData.filter(r =>
     r.district.toLowerCase().includes(input.toLowerCase())
@@ -19,6 +35,9 @@ function Searchinput({ text }) {
     setInput(districtName);
     setshow(false);
   };
+   const handlechagne=(e)=>{
+    setInput(e.target.value)
+  }
 
   return (
     <div className="relative w-55">
@@ -26,7 +45,7 @@ function Searchinput({ text }) {
         className="p-4 bg-white text-black w-full outline-none rounded-md"
         value={input}
         placeholder={text}
-        onChange={(e) => setInput(e.target.value)}
+        onChange={handlechagne}
         onFocus={() => setshow(true)}
       />
       {show && (<div className="absolute top-full left-0 mt-1 border-2 bg-[#7b7b7b] overflow-y-scroll max-h-[100px] w-full ">
@@ -46,4 +65,6 @@ function Searchinput({ text }) {
 }
 
 export default Searchinput;
+
+
 

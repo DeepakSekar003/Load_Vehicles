@@ -6,6 +6,9 @@ import LoginPage from "./components/LoginPage";
 import Contact from "./components/Contact";
 import B_mobilenum from "./components/B_mobilenum.jsx";
 import Otp from "./components/Otp";
+import CustomerPage from "./pages/CustomerPage.jsx";
+
+import PersonalSec from "./pages/PersonalSec.jsx";
 
 import BussinessSec from "./pages/BussinessSec.jsx";
 
@@ -27,6 +30,8 @@ function App() {
            <Route exact path="/otp" element={<Otp />} />
           <Route exact path="/BussinessSec" element={<BussinessSec />} />
 
+
+          <Route exact path="/PersonalSec" element={<PersonalSec/>}/>
         </Routes>
       </Router>
     </>
