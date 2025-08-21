@@ -1,5 +1,5 @@
 import { AiOutlineCloudUpload } from "react-icons/ai";
-
+import { useState } from 'react'
 export function InputBox({ placeholder }) {
   return (
     <input type="text"
@@ -9,12 +9,19 @@ export function InputBox({ placeholder }) {
 }
 
 export function RadioBox() {
+      const [options,setoptions]=useState('Part Load');
+      const select=['Part Load','Full Load']
   return (
     <>
-      <input type="radio" id="business" name="radiobox" className=" appearance-none" />
-      <label for="business" className="bg-white text-[#7b7b7b] p-4 w-55  font-semi-bold cursor-pointer flex justify-center items-center hover:bg-[#f2f0f0]  rounded-l-md">Business</label><br />
-      <input type="radio" id="personal" name="radiobox" className="appearance-none" />
-      <label for="personal" className="bg-white text-[#7b7b7b] p-4 w-56 -ml-5.5 font-semi-bold cursor-pointer flex items-center justify-center hover:bg-[#f2f0f0] rounded-r-md ">Personal</label>
+        <div className="flex gap-0.5">
+         {select.map((option)=>(
+                <button key={option}
+                onClick={()=>setoptions(option)}
+                className={`p-4 w-55 rounded-md transition-all duration-200
+                ${options===option ? 'bg-[#9c9c9c] text-white shadow-md'
+                 : 'bg-white text-[#7b7b7b]  hover:bg-[#f2f0f0]]'}`} >{option}</button>
+            ))}
+    </div>
     </>
   )
 }
