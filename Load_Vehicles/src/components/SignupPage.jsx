@@ -17,12 +17,14 @@ const SignupPage = ({ text }) => {
   const handleBack = () => setStep((prev) => (prev > 0 ? prev - 1 : prev));
 
   const flowBook = [
+
     <B_mobilenum Next={handleNext} setSelectedUser={setSelectedUser} />,
     <Otp Next={handleNext} Back={handleBack} selectedUser={selectedUser} />,
     <Details Back={handleBack} />
   ];
 
   const flowEarn = [
+
     <B_mobilenum Next={handleNext} setSelectedUser={setSelectedUser} />,
     <Otp Next={handleNext} Back={handleBack} selectedUser={selectedUser} />,
     <Location Next={handleNext} placeholder={text} Back={handleBack} />,

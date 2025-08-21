@@ -39,10 +39,12 @@ const B_mobilenum = ({ Next, setSelectedUser }) => {
   }, [show]);
 
   return (
+
     <div className="flex flex-col space-y-6 items-center justify-center min-h-screen bg-[#7b7b7b]">
       {show && (
         <div className="flex items-center w-84 bg-white rounded-2xl">
           <div>
+
             <img src={security} alt="" />
           </div>
           <p>Invalid Mobile number, Please try again</p><br />
@@ -60,10 +62,13 @@ const B_mobilenum = ({ Next, setSelectedUser }) => {
             className="p-4 bg-white text-[#7b7b7b] w-55 2xl:w-62 2xl:mt-7 outline-none rounded-md"
           />
         </div>
+
         <div className="flex w-25 mt-3">
           <NextButton label="Next &rarr;" onClick={checkNumber} />
+
         </div>
       </div>
+
     </div>
   );
 };
