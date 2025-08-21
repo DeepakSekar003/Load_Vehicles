@@ -10,13 +10,17 @@ import CustomerPage from "./pages/CustomerPage.jsx";
 
 import PersonalSec from "./pages/PersonalSec.jsx";
 
+import BussinessSec from "./pages/BussinessSec.jsx";
+
 
 
 function App() {
   return (
     <>
       <Router>
+        
         <Routes>
+          
           <Route exact path="/" element={<HomePage />} />
           <Route exact path="/SignupPage" element={<SignupPage />} />
           <Route exact path="/LoginPage" element={<LoginPage />} />
@@ -24,7 +28,8 @@ function App() {
           <Route exact path="/Contact" element={<Contact />} />
            <Route exact path="/mobile" element={<B_mobilenum />} />
            <Route exact path="/otp" element={<Otp />} />
-          <Route exact path="/CustomerPage" element={<CustomerPage/>}/>
+          <Route exact path="/BussinessSec" element={<BussinessSec />} />
+
 
           <Route exact path="/PersonalSec" element={<PersonalSec/>}/>
         </Routes>
