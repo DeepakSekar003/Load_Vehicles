@@ -41,7 +41,7 @@ const Homepage = () => {
         </div>
 
         <div className="ml-3 flex flex-wrap gap-2 mt-5 2xl:mt-7 2xl:text-2xl ">
-          <RadioBox />
+          <RadioBox options={['Business','Personal']} />
         </div>
          
          <div className="ml-5 mt-5 2xl:mt-15 ">

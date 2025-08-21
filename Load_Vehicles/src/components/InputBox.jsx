@@ -8,17 +8,16 @@ export function InputBox({ placeholder }) {
   )
 }
 
-export function RadioBox() {
-      const [options,setoptions]=useState('Part Load');
-      const select=['Part Load','Full Load']
+export function RadioBox({options}) {
+      const [selected,setSelected]=useState('');      
   return (
     <>
         <div className="flex gap-0.5">
-         {select.map((option)=>(
+         {options.map((option)=>(
                 <button key={option}
-                onClick={()=>setoptions(option)}
+                onClick={()=>setSelected(option)}
                 className={`p-4 w-55 rounded-md transition-all duration-200
-                ${options===option ? 'bg-[#9c9c9c] text-white shadow-md'
+                ${selected===option ? 'bg-[#9c9c9c] text-white shadow-md'
                  : 'bg-white text-[#7b7b7b]  hover:bg-[#f2f0f0]]'}`} >{option}</button>
             ))}
     </div>
