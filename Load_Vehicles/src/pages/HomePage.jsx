@@ -3,6 +3,7 @@ import {InputBox,NextButton, RadioBox} from "../components/InputBox";
 import Searchinput from '../components/inputPD'
 import main from "../assets/main.jpg";
 import  {useEffect,useState} from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import img1 from "../assets/img1.jpg"
 import img2 from "../assets/img2.jpg"
@@ -15,6 +16,21 @@ import Driver4 from "../assets/Driver Section 4.jpg"
 
 const Homepage = () => {
   const[images, setImages] = useState ([]);
+  const[selectedType, setSelectedType] = useState("");
+  const navigate = useNavigate();
+  
+  const handleNextClick = () => {
+    if(!selectedType) {
+      alert("Please select a type (Business or Personal)");
+      return;
+    }
+   
+    if(selectedType === "Business") {
+      navigate("/BusinessSec");
+    } else if (selectedType === "Personal") {
+      navigate("/PersonalSec")
+    }
+  }
 
    useEffect(() => {
     axios
@@ -41,11 +57,14 @@ const Homepage = () => {
         </div>
 
         <div className="ml-3 flex flex-wrap gap-2 mt-5 2xl:mt-7 2xl:text-2xl ">
-          <RadioBox options={['Business','Personal']} />
+          <RadioBox options={["Business","Personal"]}
+          selectedOption={selectedType}
+          onChange={(value) => setSelectedType(value)}
+          />
         </div>
          
          <div className="ml-5 mt-5 2xl:mt-15 ">
-         <NextButton label="Next" />
+         <NextButton label="Next" onClick={handleNextClick} />
          </div>
 
         <div className="ml-125 2xl:ml-160 -mt-93 2xl:-mt-140">
