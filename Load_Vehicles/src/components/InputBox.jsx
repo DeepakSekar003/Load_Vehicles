@@ -1,10 +1,15 @@
 import { AiOutlineCloudUpload } from "react-icons/ai";
 import { useEffect, useState } from "react";
 
-export function InputBox({ placeholder }) {
-  return (
-    <input type="text"
-      placeholder={placeholder} 
+export function InputBox({ value, onChange, onBlur, placeholder, name }) {
+   return (
+    <input
+      type="text"
+      name={name}
+      placeholder={placeholder}
+      value={value}          
+      onChange={onChange}    
+      onBlur={onBlur}  
       className="p-4 bg-white text-[#7b7b7b] w-55 2xl:w-62 2xl:mt-7 outline-none rounded-md" />
   )
 }
@@ -46,10 +51,18 @@ export function DriverFileuplod({ label }) {
     </label>
   )
 }
-export function Date() {
-  return (
-    <div className=" border w-55 p-4 border-white bg-white rounded-md text-gray-500  px-3">
-      <input type="date" className="focus:outline-none" />
-</div>
-)
+
+
+export function Date({value, onChange, onBlur, name}) {
+    return (
+    <input
+      type="date"
+      name={name}
+      value={value}          
+      onChange={onChange}    
+      onBlur={onBlur} 
+      className=" border w-55 p-4 border-white focus:outline-none bg-white rounded-md text-gray-500  px-3"
+     />
+  )
+
 }

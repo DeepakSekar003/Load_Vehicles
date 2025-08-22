@@ -1,39 +1,26 @@
 import React, { useEffect, useState } from "react";
 
-/**
- * Searchinput Component
- *
- * Provides a search input with debounce functionality and API integration.
- * Fetches data from the API, filters results based on user input,
- * and displays a dropdown with matching districts.
- * @param {string} props.text - Placeholder text for the input field
- */
-function Searchinput({ text }) {
+
+function Searchinput({ text, value, onChange, onBlur, name }) {
+
   const [allData, setAllData] = useState([]);
-  const [input, setInput] = useState("");
-  const [show, setshow] = useState(false);
+  const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    fetch("https://688b26b82a52cabb9f50597e.mockapi.io/api/searchAPI")
+      .then((res) => res.json())
+      .then((data) => setAllData(data));
+  }, []);
 
 
- useEffect(() => {
-    if(!input){
-      setAllData([]);
-      return;
-    }
-    const delaydebounce=setTimeout(() => {
-       fetch("https://688b26b82a52cabb9f50597e.mockapi.io/api/searchAPI")
-      .then(res => res.json())
-      .then(data => setAllData(data))
-      .catch((err) => console.error("API fetch error:", err)); 
-    }, 300);    
-    return()=>clearTimeout(delaydebounce)
-  }, [input]);
-
-  const results = allData.filter(r =>
-    r.district.toLowerCase().includes(input.toLowerCase())
+  const results = allData.filter((r) =>
+    r.district.toLowerCase().includes((value || "").toLowerCase())
   );
-  const handleevent= (districtName)=>{
-    setInput(districtName);
-    setshow(false);
+
+  const handleSelect = (districtName) => {
+  
+    onChange({ target: { name, value: districtName } });
+    setShow(false);
   };
    const handlechagne=(e)=>{
     setInput(e.target.value)
@@ -42,29 +29,41 @@ function Searchinput({ text }) {
   return (
     <div className="relative w-55">
       <input
+        name={name}
         className="p-4 bg-white text-black w-full outline-none rounded-md"
-        value={input}
+        value={value || ""}
         placeholder={text}
-        onChange={handlechagne}
-        onFocus={() => setshow(true)}
+        onChange={onChange}
+        onBlur={onBlur}
+        onFocus={() => setShow(true)}
+
       />
-      {show && (<div className="absolute top-full left-0 mt-1 border-2 bg-[#7b7b7b] overflow-y-scroll max-h-[100px] w-full ">
-        {results.length > 0 ? (
-          results.map(r => (
-            <span key={r.id} className="p-1 hover:bg-gray-200 hover:text-black cursor-pointer block" onClick={()=>handleevent(r.district)}>
-              {r.district}
+      {show && (
+        <div className="absolute top-full left-0 mt-1 border-2 bg-[#7b7b7b] overflow-y-scroll max-h-[100px] w-full">
+          {results.length > 0 ? (
+            results.map((r) => (
+              <span
+                key={r.id}
+                className="p-1 hover:bg-gray-200 hover:text-black cursor-pointer block"
+                onClick={() => handleSelect(r.district)}
+              >
+                {r.district}
+              </span>
+            ))
+          ) : (
+            <span className="block p-1 text-white hover:text-black hover:bg-white">
+              No district found
             </span>
-          ))
-        ) : (
-          <span className="block p-1 text-white hover:text-black hover:bg-white">No district found</span>
-        )}
-      </div>
+          )}
+        </div>
       )}
-    </div >
+    </div>
   );
 }
 
 export default Searchinput;
+
+
 
 
 

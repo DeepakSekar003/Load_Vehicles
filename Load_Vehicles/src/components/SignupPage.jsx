@@ -33,7 +33,8 @@ const SignupPage = ({ text }) => {
     <Fileuplod Next={handleNext} Back={handleBack} />,
     <Vehicles Next={handleNext} Back={handleBack} />,
     <Accountdetail Next={handleNext} Back={handleBack} />,
-    <Details Back={handleBack} />
+    <Details Next={handleNext} Back={handleBack} />,
+    
   ];
 
   const renderStep = () => {
