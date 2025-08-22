@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 
+
 function Searchinput({ text, value, onChange, onBlur, name }) {
+
   const [allData, setAllData] = useState([]);
   const [show, setShow] = useState(false);
 
@@ -9,6 +11,7 @@ function Searchinput({ text, value, onChange, onBlur, name }) {
       .then((res) => res.json())
       .then((data) => setAllData(data));
   }, []);
+
 
   const results = allData.filter((r) =>
     r.district.toLowerCase().includes((value || "").toLowerCase())
@@ -19,6 +22,9 @@ function Searchinput({ text, value, onChange, onBlur, name }) {
     onChange({ target: { name, value: districtName } });
     setShow(false);
   };
+   const handlechagne=(e)=>{
+    setInput(e.target.value)
+  }
 
   return (
     <div className="relative w-55">
@@ -30,6 +36,7 @@ function Searchinput({ text, value, onChange, onBlur, name }) {
         onChange={onChange}
         onBlur={onBlur}
         onFocus={() => setShow(true)}
+
       />
       {show && (
         <div className="absolute top-full left-0 mt-1 border-2 bg-[#7b7b7b] overflow-y-scroll max-h-[100px] w-full">
@@ -55,3 +62,8 @@ function Searchinput({ text, value, onChange, onBlur, name }) {
 }
 
 export default Searchinput;
+
+
+
+
+

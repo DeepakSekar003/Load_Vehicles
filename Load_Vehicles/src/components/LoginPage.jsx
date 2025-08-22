@@ -3,23 +3,25 @@ import B_mobilenum from './B_mobilenum'
 import Otp from './Otp'
 import HomePage from '../pages/HomePage'
 import SignupPage from "../components/SignupPage"
+import CustomerPage from '../pages/CustomerPage'
 const LoginPage = () => {
 
 const [flow,setFlow] = useState(null)
 const [steps,setSteps]= useState(0)
+const [selectedUser, setSelectedUser] = useState(null); 
 
 const handlePage = () =>setSteps((prevs)=>prevs + 1)
-
+const handleBack = () => setStep((prev) => (prev > 0 ? prev - 1 : prev));
 
 const book =[
-    <B_mobilenum Next={handlePage} />,
-    <Otp Next={handlePage}/>,
-    <HomePage Next={handlePage}/>
+    <B_mobilenum Next={handlePage} setSelectedUser={setSelectedUser} />,
+    <Otp Next={handlePage}  Back={handleBack} selectedUser={selectedUser} />,
+   <CustomerPage Next={handlePage} />
 ];
 
 const earn =[
-    <B_mobilenum Next={handlePage}/>,
-    <Otp Next={handlePage}/>,
+    <B_mobilenum Next={handlePage} setSelectedUser={setSelectedUser}/>,
+    <Otp Next={handlePage}  Back={handleBack} selectedUser={selectedUser}/>,
     <HomePage Next={handlePage}/>
 ];
 
