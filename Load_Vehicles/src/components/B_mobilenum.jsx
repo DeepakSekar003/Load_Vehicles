@@ -65,7 +65,7 @@ const B_mobilenum = ({ Next }) => {
             className="p-4 bg-white text-[#7b7b7b] w-55 2xl:w-62 2xl:mt-7 outline-none rounded-md" />
         </div>
 
-        <div className="flex w-25 mt-3  ml-2">
+        <div className="flex w-25 mt-3 ">
 
           <NextButton label="Next &rarr;" onClick={() => checkNumber()} />
 
