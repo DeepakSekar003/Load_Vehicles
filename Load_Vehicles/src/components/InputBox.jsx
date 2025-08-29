@@ -1,6 +1,7 @@
 import { AiOutlineCloudUpload } from "react-icons/ai";
 import { useEffect, useState } from "react";
 
+
 export function InputBox({ value, onChange, onBlur, placeholder, name }) {
    return (
     <input
@@ -18,7 +19,7 @@ export function InputBox({ value, onChange, onBlur, placeholder, name }) {
 export function RadioBox({ options, selectedOption, onChange }) {
   return (  
     <>
-        <div className="flex gap-0.5">
+        <div className="flex p-2 gap-2">
          {options.map((option)=>(
                 <button key={option}
                 onClick={()=>onChange(option)}

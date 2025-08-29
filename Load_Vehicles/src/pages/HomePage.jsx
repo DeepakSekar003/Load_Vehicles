@@ -3,7 +3,7 @@ import {InputBox,NextButton, RadioBox} from "../components/InputBox";
 import Searchinput from '../components/inputPD'
 import main from "../assets/main.jpg";
 import  {useEffect,useState} from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import img1 from "../assets/img1.jpg"
 import img2 from "../assets/img2.jpg"
@@ -105,7 +105,7 @@ const Homepage = () => {
         <div className='   w-[40%] m-4   '>
           <h1 className='text-5xl mb-5 2xl:text-6xl font-bold'>Delivering More Than Just Goods</h1>
           <p className='text-3xl mb-5 2xl:text-4xl '>Your logistics partner for smooth transportation.</p>
-          <button className='w-32 2xl:w-36 bg-[#3d3d3d] h-12 2xl:h-14 2xl:text-xl text-lg rounded-md text-white  font-bold cursor-pointer hover:bg-[#1d1d1d] '>Book Ride</button>
+        <Link to='/CustomerPage'><button className='w-32 2xl:w-36 bg-[#3d3d3d] h-12 2xl:h-14 2xl:text-xl text-lg rounded-md text-white  font-bold cursor-pointer hover:bg-[#1d1d1d] '>Book Ride</button></Link>  
         </div>
 
         <div className='  flex flex-wrap  justify-center max-w-[50%]  my-36  '>
