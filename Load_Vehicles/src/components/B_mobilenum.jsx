@@ -104,8 +104,10 @@ const B_mobilenum = ({ Next, setSelectedUser }) => {
           />
         </div>
 
-        <div className="flex w-25 mt-3">
-          <NextButton label="Next &rarr;" onClick={checkNumber} />
+
+        <div className="flex w-25 mt-3 ">
+
+          <NextButton label="Next &rarr;" onClick={() => checkNumber()} />
 
         </div>
       </div>

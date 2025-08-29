@@ -13,6 +13,7 @@ import Driver1 from "../assets/Driver Section 1.jpg"
 import Driver2 from "../assets/Driver Section 2.jpg"
 import Driver3 from "../assets/Driver Section 3.jpg"
 import Driver4 from "../assets/Driver Section 4.jpg"
+import Footer from "../components/Footer.jsx";
 
 const Homepage = () => {
   const[images, setImages] = useState ([]);
@@ -141,7 +142,7 @@ const Homepage = () => {
         </div>
       </section>
 
-
+       <Footer/>
     </div>
   ) 
 
