@@ -5,7 +5,7 @@ export function InputBox({ placeholder }) {
   return (
     <input type="text"
       placeholder={placeholder} 
-      className="p-4 bg-white text-[#7b7b7b] w-55 2xl:w-62 2xl:mt-7 outline-none rounded-md" />
+      className="p-4 bg-white text-[#7b7b7b] w-55 2xl:w-62 2xl:mt-7 outline-none rounded-md"/>
   )
 }
 
@@ -13,7 +13,7 @@ export function InputBox({ placeholder }) {
 export function RadioBox({ options, selectedOption, onChange }) {
   return (  
     <>
-        <div className="flex gap-0.5">
+        <div className="flex p-2 gap-2">
          {options.map((option)=>(
                 <button key={option}
                 onClick={()=>onChange(option)}
