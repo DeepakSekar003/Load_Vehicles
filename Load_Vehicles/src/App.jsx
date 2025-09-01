@@ -9,6 +9,7 @@ import Otp from "./components/Otp";
 import CustomerPage from "./pages/CustomerPage.jsx";
 import PersonalSec from "./pages/PersonalSec.jsx";
 import BusinessSec from "./pages/BusinessSec.jsx";
+import Driverfnc from "./pages/DriverPage.jsx";
 
 
 
@@ -29,6 +30,7 @@ function App() {
            <Route exact path="/CustomerPage" element={<CustomerPage/>} />
           <Route exact path="/BusinessSec" element={<BusinessSec/>} />
           <Route exact path="/PersonalSec" element={<PersonalSec/>}/>
+          <Route exact path="/Driverfnc" element={<Driverfnc/>}/>
         </Routes>
       </Router>
     </>

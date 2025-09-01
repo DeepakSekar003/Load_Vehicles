@@ -32,6 +32,9 @@ const Homepage = () => {
       navigate("/PersonalSec")
     }
   }
+  const handleDriver=()=>{
+    navigate("/Driverfnc")
+  }
 
    useEffect(() => {
     axios
@@ -137,7 +140,7 @@ const Homepage = () => {
             <p className=" text-3xl  mb-5 text-white ">Join as a Driver and earn on your own terms.
               Driver whenever you want.</p>
 
-            <button className="w-32 h-12  rounded-[10px] bg-[#3D3D3D] hover:bg-[#1d1d1d] font-bold mt-[20px] text-white cursor-pointer ">Start Earning</button>
+            <button className="w-32 h-12  rounded-[10px] bg-[#3D3D3D] hover:bg-[#1d1d1d] font-bold mt-[20px] text-white cursor-pointer" onClick={handleDriver}>Start Earning</button>
           </div>
         </div>
       </section>
