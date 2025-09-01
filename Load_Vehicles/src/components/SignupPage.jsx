@@ -8,6 +8,7 @@ import Accountdetail from "../components/Accountdetail";
 import Details from "../components/Details";
 import LoginPage from "../components/LoginPage"
 import CustomerPage from "../pages/CustomerPage";
+import Driverfnc from "../pages/DriverPage";
 
 const SignupPage = ({ text }) => {
   const [flowType, setFlowType] = useState(null);
@@ -34,6 +35,7 @@ const SignupPage = ({ text }) => {
     <Vehicles Next={handleNext} Back={handleBack} />,
     <Accountdetail Next={handleNext} Back={handleBack} />,
     <Details Next={handleNext} Back={handleBack} />,
+    <Driverfnc Next={handleNext}/>
     
   ];
 
