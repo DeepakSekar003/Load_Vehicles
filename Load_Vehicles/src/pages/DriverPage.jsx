@@ -80,6 +80,52 @@ const Driverfnc = () => {
                     <p className=" mt-9 text-2xl text-white">Drive Count</p>
                 </div>
                 </div>
+                  <div className=" flex mt-33 mb-33 justify-between items-center border-2 border-white mx-9 rounded-2xl">
+            <div className=" ml-20 mt-5 mb-5">
+                <img src={activedelivery} alt="activedelivery" className=" w-96 border-2 rounded-2xl border-white"/>
+            </div>
+
+            <div className="flex flex-col text-white text-2xl font-bold">
+                
+            </div>
+
+            <div>
+                    <button 
+                        className="px-7 py-5 bg-red-600 hover:bg-red-800 text-white rounded-2xl mr-20">
+                        Finish Order
+                    </button>
+                    <button className="px-7 py-5 bg-gray-500 text-white rounded-2xl mr-20">
+                        Active Delivery
+                    </button>
+            </div>
+        </div>
+
+         <div>
+            <select>
+                <option value="" > filter </option>
+                <option value="" > Business </option>
+                <option value="" > Personal </option>
+            </select>
+        </div>
+         <div className=" px-9 w-full mb-3">
+                <div  className="flex justify-between items-center border border-white p-3 rounded-lg mb-3">
+                    <span className="text-white">
+                      
+                    </span>
+                    <div>
+                        <button 
+                            className={"px-4 py-2 rounded-full mr-4  bg-gray-400  hover:bg-green-600"
+                            }>
+                            Accept
+                        </button>
+                        <button 
+                            className=" bg-red-400 px-4 py-2 rounded-full hover:bg-red-600">
+                            Reject
+                        </button>
+                    </div>
+                </div>
+                <span className="text-white">No data found</span>
+        </div>
             </div>
         </>
     );

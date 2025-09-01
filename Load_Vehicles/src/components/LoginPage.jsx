@@ -4,6 +4,7 @@ import Otp from './Otp'
 import HomePage from '../pages/HomePage'
 import SignupPage from "../components/SignupPage"
 import CustomerPage from '../pages/CustomerPage'
+import Driverfnc from '../pages/DriverPage'
 const LoginPage = () => {
 
 const [flow,setFlow] = useState(null)
@@ -22,7 +23,7 @@ const book =[
 const earn =[
     <B_mobilenum Next={handlePage} setSelectedUser={setSelectedUser}/>,
     <Otp Next={handlePage}  Back={handleBack} selectedUser={selectedUser}/>,
-    <HomePage Next={handlePage}/>
+    <Driverfnc Next={handlePage}/>
 ];
 
 const renderSteps =()=>{
