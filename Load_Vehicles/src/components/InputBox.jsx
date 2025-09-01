@@ -54,7 +54,7 @@ export function DriverFileuplod({ label }) {
 }
 
 
-export function Date({value, onChange, onBlur, name}) {
+export function Date({value, onChange, onBlur, name, ...rest}) {
     return (
     <input
       type="date"
@@ -63,6 +63,7 @@ export function Date({value, onChange, onBlur, name}) {
       onChange={onChange}    
       onBlur={onBlur} 
       className=" border w-55 p-4 border-white focus:outline-none bg-white rounded-md text-gray-500  px-3"
+      {...rest}
      />
   )
 
