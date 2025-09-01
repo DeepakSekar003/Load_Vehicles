@@ -3,6 +3,8 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 
 const Details = ({ Next, Back }) => {
+  const today = new window.Date().toISOString().split("T")[0];
+
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -14,9 +16,14 @@ const Details = ({ Next, Back }) => {
       email: Yup.string()
         .email("Invalid email address")
         .required("Email is required"),
-      fullname: Yup.string().required("Fullname is required"),
-      gender: Yup.string().required("Gender is required"),
-      dob: Yup.string().required("Date of Birth is required"),
+      fullname: Yup.string()
+        .matches(/^[A-Za-z]+$/, "Only letters & numbers allowed")
+        .required("Fullname is required"),
+      gender: Yup.string()
+        .matches(/^[A-Za-z]+$/, "Only letters & numbers allowed")
+        .required("Gender is required"),
+      dob: Yup.string()
+        .required("Date of Birth is required"),
     }),
     onSubmit: () => {
       Next();
@@ -33,7 +40,7 @@ const Details = ({ Next, Back }) => {
         onSubmit={formik.handleSubmit}
         className="flex flex-col gap-3 border border-white p-10 rounded-md"
       >
-    
+
         <InputBox
           placeholder="Enter Your Email"
           {...formik.getFieldProps("email")}
@@ -42,7 +49,7 @@ const Details = ({ Next, Back }) => {
           <div className="text-red-500 text-sm">{formik.errors.email}</div>
         )}
 
-     
+
         <InputBox
           placeholder="Enter Your Fullname"
           {...formik.getFieldProps("fullname")}
@@ -51,7 +58,7 @@ const Details = ({ Next, Back }) => {
           <div className="text-red-500 text-sm">{formik.errors.fullname}</div>
         )}
 
-   
+
         <select
           name="gender"
           {...formik.getFieldProps("gender")}
@@ -68,20 +75,23 @@ const Details = ({ Next, Back }) => {
           <div className="text-red-500 text-sm">{formik.errors.gender}</div>
         )}
 
-      
+
         <div>
           <h1 className="text-white font-semibold">Date of Birth:</h1>
-          <input
-            type="date"
-            {...formik.getFieldProps("dob")}
-            className="w-55 p-4 border border-white bg-white rounded-md text-gray-500 focus:outline-none px-3"
-          />
-          {formik.touched.dob && formik.errors.dob && (
-            <div className="text-red-500 text-sm">{formik.errors.dob}</div>
-          )}
+
+          <div className="flex items-center justify-center flex-row  mt-2">
+            <Date
+
+              {...formik.getFieldProps("dob")}
+              max={today}
+            />
+            {formik.touched.dob && formik.errors.dob && (
+              <div className="text-red-500 text-sm">{formik.errors.dob}</div>
+            )}
+
+          </div>
         </div>
 
-  
         <div className="flex w-55">
           <NextButton label="Submit" type="submit" />
         </div>

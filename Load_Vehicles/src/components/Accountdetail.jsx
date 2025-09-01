@@ -12,13 +12,18 @@ const Accountdetail = ({ Next, Back }) => {
       ifscCode: "",
     },
     validationSchema: Yup.object({
-      bankName: Yup.string().required("Bank Name is required"),
+      bankName: Yup.string()
+      .matches(/^[A-Za-z]+$/, "Only letters")
+      .required("Bank Name is required"),
       branch: Yup.string().required("Branch is required"),
       accountNumber: Yup.string()
         .matches(/^[0-9]+$/, "Account Number must be digits")
         .required("Account Number is required"),
-      name: Yup.string().required("Name is required"),
+      name: Yup.string()
+      .matches(/^[A-Za-z]+$/, "Only letters")
+      .required("Name is required"),
       ifscCode: Yup.string()
+        .matches(/^[A-Za-z0-9]+$/, "Only letters & numbers allowed")
         .required("IFSC Code is required"),
     }),
     onSubmit: () => {

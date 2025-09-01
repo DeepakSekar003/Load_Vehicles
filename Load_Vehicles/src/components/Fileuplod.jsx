@@ -4,12 +4,15 @@ import * as Yup from "yup";
 import React from "react";
 
 const Filesuplod = ({ Next, Back }) => {
+  const today = new window.Date().toISOString().split("T")[0];
+
   const formik = useFormik({
     initialValues: {
       DLnumber: "",
       DLvalidTill: "",
       PANnumber: "",
     },
+    
     validationSchema: Yup.object({
       DLnumber: Yup.string()
         .required("DL Number is required")
@@ -51,6 +54,7 @@ const Filesuplod = ({ Next, Back }) => {
               value={formik.values.DLvalidTill}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
+              min={today}
             />
             {formik.touched.DLvalidTill && formik.errors.DLvalidTill && (
               <p className="text-red-500 text-sm">{formik.errors.DLvalidTill}</p>
