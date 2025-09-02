@@ -1,10 +1,16 @@
-import React, { useState } from "react";
+import React, { useState , useEffect} from "react";
 import Navbar from "../components/Navbar";
 import { NextButton } from "../components/InputBox";
 
 const BusinessSec = ({ Back }) => {
   const [loadType, setLoadType] = useState("");
   const [options, setoptions] = useState("");
+  const [today, setToday] = useState('');
+       useEffect(() => { 
+         const date = new Date();
+         const formatted = date.toISOString().split('T')[0];
+         setToday(formatted)
+       }, []) 
   return (
     <>
       <Navbar />
@@ -71,8 +77,14 @@ const BusinessSec = ({ Back }) => {
                 </select>
               </div>
             )}
+            <div className=' flex mt-3 justify-center items-center text-center'>      
+                        <label className="text-2xl font-bold mt-5  text-white">Select Date :</label>
+                    <div className=" border w-55 p-4 border-white bg-white rounded-md text-gray-500 ml-2 mt-9">
+      <input type="date" className="focus:outline-none " min={today} onChange={() => {}}/>
+ </div>  
+                    </div>
 
-            <button className="bg-white text-[#3d3d3d] text-lg w-40 mb-8 mt-7  h-12  text-center rounded-md hover:font-bold cursor-pointer ">
+            <button className="bg-white text-[#3d3d3d] text-lg w-40 mb-8 mt-7  h-12  text-center rounded-md hover:font-bold cursor-pointer ">
               Book Ride
             </button>
           </div>
@@ -81,5 +93,6 @@ const BusinessSec = ({ Back }) => {
     </>
   );
 };
+
 
 export default BusinessSec;
