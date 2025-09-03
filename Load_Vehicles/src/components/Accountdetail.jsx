@@ -13,21 +13,22 @@ const Accountdetail = ({ Next, Back }) => {
     },
     validationSchema: Yup.object({
       bankName: Yup.string()
-      .matches(/^[A-Za-z]+$/, "Only letters")
-      .required("Bank Name is required"),
+        .matches(/^[A-Za-z]+$/, "Only letters")
+        .required("Bank Name is required"),
       branch: Yup.string().required("Branch is required"),
       accountNumber: Yup.string()
         .matches(/^[0-9]+$/, "Account Number must be digits")
         .required("Account Number is required"),
       name: Yup.string()
-      .matches(/^[A-Za-z]+$/, "Only letters")
-      .required("Name is required"),
+        .matches(/^[A-Za-z]+$/, "Only letters")
+        .required("Name is required"),
       ifscCode: Yup.string()
         .matches(/^[A-Za-z0-9]+$/, "Only letters & numbers allowed")
         .required("IFSC Code is required"),
     }),
-    onSubmit: () => {
-      Next(); 
+    onSubmit: (values) => {
+      localStorage.setItem("accountdetail", JSON.stringify(values));
+      Next();
     },
   });
 
@@ -41,42 +42,27 @@ const Accountdetail = ({ Next, Back }) => {
         onSubmit={formik.handleSubmit}
         className="flex flex-col p-12 rounded-md border gap-2"
       >
-       
-        <InputBox
-          placeholder="Bank Name"
-          {...formik.getFieldProps("bankName")}
-        />
+        <InputBox placeholder="Bank Name" {...formik.getFieldProps("bankName")} />
         {formik.touched.bankName && formik.errors.bankName && (
           <div className="text-red-500 text-sm">{formik.errors.bankName}</div>
         )}
 
-    
         <InputBox placeholder="Branch" {...formik.getFieldProps("branch")} />
         {formik.touched.branch && formik.errors.branch && (
           <div className="text-red-500 text-sm">{formik.errors.branch}</div>
         )}
 
-        <InputBox
-          placeholder="Account Number"
-          {...formik.getFieldProps("accountNumber")}
-        />
+        <InputBox placeholder="Account Number" {...formik.getFieldProps("accountNumber")} />
         {formik.touched.accountNumber && formik.errors.accountNumber && (
-          <div className="text-red-500 text-sm">
-            {formik.errors.accountNumber}
-          </div>
+          <div className="text-red-500 text-sm">{formik.errors.accountNumber}</div>
         )}
 
-    
         <InputBox placeholder="Name" {...formik.getFieldProps("name")} />
         {formik.touched.name && formik.errors.name && (
           <div className="text-red-500 text-sm">{formik.errors.name}</div>
         )}
 
-    
-        <InputBox
-          placeholder="Ifsc Code"
-          {...formik.getFieldProps("ifscCode")}
-        />
+        <InputBox placeholder="Ifsc Code" {...formik.getFieldProps("ifscCode")} />
         {formik.touched.ifscCode && formik.errors.ifscCode && (
           <div className="text-red-500 text-sm">{formik.errors.ifscCode}</div>
         )}

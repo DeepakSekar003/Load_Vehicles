@@ -8,9 +8,10 @@ const Location = ({ Next, Back }) => {
   const formik = useFormik({
     initialValues: { location: "" },
     validationSchema: Yup.object({
-    location: Yup.string().required("Location is required"),
+      location: Yup.string().required("Location is required"),
     }),
     onSubmit: (values) => {
+      localStorage.setItem("location", JSON.stringify(values));
       Next();
     },
   });
@@ -20,7 +21,6 @@ const Location = ({ Next, Back }) => {
       <form onSubmit={formik.handleSubmit} className="border p-8 rounded-md">
         <h1 className="text-3xl mb-2 font-semibold">Location</h1>
 
-      
         <Searchinput
           text="Enter the location"
           value={formik.values.location}
@@ -34,7 +34,7 @@ const Location = ({ Next, Back }) => {
         )}
 
         <div className="flex w-25 mt-3">
-          <NextButton label="Next &rarr;" />
+          <NextButton label="Next &rarr;" type="submit" />
         </div>
       </form>
 
