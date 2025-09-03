@@ -3,7 +3,6 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 
 const Vehicles = ({ Next, Back }) => {
-
   const today = new window.Date().toISOString().split("T")[0];
 
   const formik = useFormik({
@@ -13,7 +12,8 @@ const Vehicles = ({ Next, Back }) => {
     validationSchema: Yup.object({
       vehicleDate: Yup.string().required("Vehicle date is required"),
     }),
-    onSubmit: () => {
+    onSubmit: (values) => {
+      localStorage.setItem("vehicles", JSON.stringify(values));
       Next();
     },
   });
@@ -32,7 +32,7 @@ const Vehicles = ({ Next, Back }) => {
       <div className="flex items-center justify-center flex-row ml-2 mt-2">
         <Date
           {...formik.getFieldProps("vehicleDate")}
-          max={today}   
+          max={today}
         />
 
         {formik.touched.vehicleDate && formik.errors.vehicleDate ? (
