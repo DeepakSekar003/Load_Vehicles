@@ -3,9 +3,27 @@ import { RadioBox } from '../components/InputBox'
 import Navbar from '../components/Navbar'
 import Searchinput from '../components/inputPD'
 import { useState } from 'react'
+/**
+ * Customer Page
+ * 
+ * This page allows the user to enter the pick up and drop location, then choose wheather the booking is for Business or Personal.
+ * Based on the selection, the user is navigate to the appropiate section.
+ * If no option is selected, an alert is displayed asking the user to make a choice.
+ * 
+ * @param {Function} props.Next - Callback function to proceed to the next step
+ * 
+ * @returns 
+ */
 const CustomerPage = ({ Next }) => {
      const[selectedType, setSelectedType] = useState("");
      const navigate = useNavigate();
+
+/**
+ * Handles navigation based on selected booking type.
+ * If no type is selected shows alert.
+ * @function
+ * @returns {Void}
+ */
      const next = () =>{
         if(!selectedType){
             alert("Please select a type (Business or Personal)")

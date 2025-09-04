@@ -28,7 +28,7 @@ const PersonalSec = ({Back}) => {
                         </select>
                     <div className='mb-8'>
                      <div className=" border w-55 p-4 border-white bg-white rounded-md text-gray-500  px-3">
-      <input type="date" className="focus:outline-none" min={today} onChange={() => {}}/>
+      <input type="date" className="focus:outline-none" min={today}/>
  </div>  
                     </div>
                     <button className='bg-white text-[#3d3d3d] text-lg w-40 mb-5  h-12 p-3 text-center rounded-md hover:font-bold cursor-pointer'>Book Ride</button>

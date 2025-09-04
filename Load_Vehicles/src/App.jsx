@@ -10,6 +10,8 @@ import CustomerPage from "./pages/CustomerPage.jsx";
 import PersonalSec from "./pages/PersonalSec.jsx";
 import BusinessSec from "./pages/BusinessSec.jsx";
 import Driverfnc from "./pages/DriverPage.jsx";
+import RideAccepted from "./pages/RideAccepted.jsx";
+
 
 
 
@@ -31,6 +33,7 @@ function App() {
           <Route exact path="/BusinessSec" element={<BusinessSec/>} />
           <Route exact path="/PersonalSec" element={<PersonalSec/>}/>
           <Route exact path="/Driverfnc" element={<Driverfnc/>}/>
+          <Route exact path="/RideAccepted" element={<RideAccepted/>}/>
         </Routes>
       </Router>
     </>
