@@ -24,43 +24,46 @@ const Details = ({ Next, Back }) => {
         .required("Gender is required"),
       dob: Yup.string().required("Date of Birth is required"),
     }),
-    onSubmit: async (values) => {
-      
-      try {
-        const vehicles = JSON.parse(localStorage.getItem("vehicles") || "{}");
-        const accountdetail = JSON.parse(localStorage.getItem("accountdetail") || "{}");
-        const files = JSON.parse(localStorage.getItem("files") || "{}");
-        const location = JSON.parse(localStorage.getItem("location") || "{}");
+   onSubmit: async (values) => {
+  try {
+    const vehicles = JSON.parse(localStorage.getItem("vehicles") || "{}");
+    const accountdetail = JSON.parse(localStorage.getItem("accountdetail") || "{}");
+    const files = JSON.parse(localStorage.getItem("files") || "{}");
+    const location = JSON.parse(localStorage.getItem("location") || "{}");
+    const mobileNumber = JSON.parse(localStorage.getItem("mobileNumber") || "{}");   
 
-        const finalData = {
-          ...vehicles,
-          ...accountdetail,
-          ...files,
-          ...location,
-          ...values, 
-        };
+    const finalData = {
+      ...vehicles,
+      ...accountdetail,
+      ...files,
+      ...location,
+      ...mobileNumber,
+      ...values,
+    };
 
-        const res = await fetch("https://68a5c7e52a3deed2960ed7cf.mockapi.io/Signup_DB", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(finalData),
-        });
+    const res = await fetch("https://68a5c7e52a3deed2960ed7cf.mockapi.io/Signup_DB", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(finalData),
+    });
 
-        const data = await res.json();
+    const data = await res.json();
 
-    
-        localStorage.setItem("signupId", data.id);
+    localStorage.setItem("signupId", data.id);
 
-        localStorage.removeItem("vehicles");
-        localStorage.removeItem("accountdetail");
-        localStorage.removeItem("files");
-        localStorage.removeItem("location");
+  
+    localStorage.removeItem("vehicles");
+    localStorage.removeItem("accountdetail");
+    localStorage.removeItem("files");
+    localStorage.removeItem("location");
+    localStorage.removeItem("mobileNumber"); 
 
-        Next();
-      } catch (error) {
-        console.error("Error saving final data:", error);
-      }
-    },
+    Next();
+  } catch (error) {
+    console.error("Error saving final data:", error);
+  }
+}
+
   });
 
   return (

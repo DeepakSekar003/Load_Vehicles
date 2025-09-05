@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { NextButton } from "../components/InputBox";
-import security from '../assets/securitylogo.png'
-
+import security from "../assets/securitylogo.png";
 /**
  * B_mobilenum Component
  *
@@ -12,61 +11,38 @@ import security from '../assets/securitylogo.png'
  * @param {Function} props.setSelectedUser - Function to set the matched user from API
  * @param {Function} props.Next - Callback function to proceed to the next step
  */
-
 const B_mobilenum = ({ Next, setSelectedUser }) => {
   const [inputvalue, setinputvalue] = useState("");
-  const [apivalue, setapivalue] = useState([]);
   const [show, setshow] = useState(false);
-
 /**
  * Handle mobile number input changes
  * allow only numeric values and restrict to  10 digits
  * 
  * @param {string} value-user input values 
  */
-
-   const handlechange = (value) => {
+  const handlechange = (value) => {
     const onlyNums = value.replace(/\D/g, "");
     if (onlyNums.length <= 10) {
       setinputvalue(onlyNums);
     }
   };
 
-  
-  useEffect(() => {
-    fetch("https://6889e0dc4c55d5c73953f255.mockapi.io/api/lv/otp")
-      .then(res => res.json())
-      .then(data => setapivalue(data))
-      .catch((err) => console.error("API fetch error:", err));
-  }, []);
+  const checkNumber = () => {
+  if (inputvalue.length !== 10) {
+    setshow(true);
+    return;
+  }
 
-  /**
-   * validate the entered mobile number against API data
-   * show error if invalid,otherwise proceeds to the next step
-   * 
-   */
-   const checkNumber = () => {
-    if (inputvalue.length !== 10) {
-      setshow(true);
-      return;
-    }
+  const randomOtp = Math.floor(1000 + Math.random() * 9000).toString();
 
-    const matched = apivalue.find((item) => {
-      const numStr = String(item.number).replace(/\D/g, "");
-      return numStr === inputvalue;
-    });
+  const userWithOtp = { number: inputvalue, otp: randomOtp };
+  setSelectedUser(userWithOtp);
 
-    if (!matched) {
-      setshow(true);
-    } else {
-      setshow(false);
-      setSelectedUser(matched); 
-      Next();
-    }
-  };
-  /**
-   * Automatically hide the message after 4 seconds
-   */
+  localStorage.setItem("mobileNumber", JSON.stringify({ number: inputvalue }));
+
+  setshow(false);
+  Next();
+};
 
   useEffect(() => {
     let timer;
@@ -77,19 +53,16 @@ const B_mobilenum = ({ Next, setSelectedUser }) => {
     }
     return () => clearTimeout(timer);
   }, [show]);
-
+  
   return (
-
     <div className="flex flex-col space-y-6 items-center justify-center min-h-screen bg-[#7b7b7b]">
       {show && (
         <div className="flex items-center w-84 bg-white rounded-2xl">
-          <div>
-
-            <img src={security} alt="" />
-          </div>
-          <p>Invalid Mobile number, Please try again</p><br />
+          <img src={security} alt="" />
+          <p>Invalid Mobile number, Please enter 10 digits</p>
         </div>
       )}
+
       <div className="border border-white p-10 rounded-md">
         <h1 className="2xl:text-5xl inline-block font-bold 2xl:ml-6 text-white">
           Enter your mobile number <br /> to get a OTP.
@@ -104,14 +77,10 @@ const B_mobilenum = ({ Next, setSelectedUser }) => {
           />
         </div>
 
-
         <div className="flex w-25 mt-3 ">
-
-          <NextButton label="Next &rarr;" onClick={() => checkNumber()} />
-
+          <NextButton label="Next &rarr;" onClick={checkNumber} />
         </div>
       </div>
-
     </div>
   );
 };
