@@ -48,7 +48,7 @@ export function DriverFileuplod({ label }) {
         <AiOutlineCloudUpload className="ml-7 size-25" />
         <p className="flex mt-6 font-semibold text-sm"> File with JPG or PNG format</p>
       </div>
-      <input id="dropzone-file" type="file" className="hidden" />
+      <input id="dropzone-file" type="file"  />
     </label>
   )
 }

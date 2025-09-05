@@ -15,7 +15,8 @@ const Accountdetail = ({ Next, Back }) => {
       bankName: Yup.string()
         .matches(/^[A-Za-z]+$/, "Only letters")
         .required("Bank Name is required"),
-      branch: Yup.string().required("Branch is required"),
+      branch: Yup.string()
+        .required("Branch is required"),
       accountNumber: Yup.string()
         .matches(/^[0-9]+$/, "Account Number must be digits")
         .required("Account Number is required"),
